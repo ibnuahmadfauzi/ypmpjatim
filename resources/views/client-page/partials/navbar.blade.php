@@ -30,7 +30,7 @@
             </li>
         </ul>
         <div>
-            <a href="#" class="btn btn-primary btn-sm">
+            <a href="#" class="btn btn-primary btn-sm px-3">
                 <i class="fa-solid fa-users"></i> Member Area
             </a>
         </div>
