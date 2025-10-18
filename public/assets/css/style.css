@@ -1,0 +1,27 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap");
+
+/* styling for general */
+body {
+    background-color: #f8fafa;
+}
+
+/* style for reset Bootstrap */
+.bg-light {
+    background-color: #ffffff !important;
+}
+.btn-primary {
+    background-color: #8d826c !important;
+    border-color: #8d826c !important;
+}
+.container-fluid {
+    padding: 0 !important;
+}
+
+/* styling for navbar */
+.navbar {
+    font-family: "Quicksand", sans-serif;
+}
+.navbar-brand img {
+    max-height: 50px;
+}
