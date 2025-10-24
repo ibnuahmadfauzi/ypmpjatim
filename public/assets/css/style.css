@@ -39,6 +39,22 @@ body {
     margin: 10px 20px;
 }
 
+/* styling for footer section */
+.footer-section {
+    background-color: #8d826c;
+}
+.footer-section h2 {
+    font-family: "Quicksand", sans-serif;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+/* styling for copyrght section */
+.copyright-section p {
+    margin: 20px 0;
+    font-family: "Quicksand", sans-serif;
+}
+
 /* ====================================================== */
 /* style for homepage */
 /* ====================================================== */
