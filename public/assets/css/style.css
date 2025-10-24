@@ -14,9 +14,6 @@ body {
     background-color: #8d826c !important;
     border-color: #8d826c !important;
 }
-.container-fluid {
-    padding: 0 !important;
-}
 
 /* styling for navbar */
 .navbar {
@@ -26,6 +23,9 @@ body {
     max-height: 50px;
 }
 
+/* ====================================================== */
+/* style for homepage */
+/* ====================================================== */
 /* styling for hero section */
 .hero-section .hero-image {
     width: 100%;
@@ -57,3 +57,50 @@ body {
     border-radius: 10px;
     width: 100%;
 }
+
+/* style for tentangkami section */
+.tentangkami-section h2 {
+    font-family: "Quicksand", sans-serif;
+}
+.tentangkami-section p {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 32px;
+    text-align: justify;
+    font-weight: 300;
+}
+.tentangkami-section a {
+    font-family: "Quicksand", sans-serif;
+}
+.tentangkami-section img {
+    width: 50%;
+}
+
+/* style for bidangkerja section */
+.bidangkerja-section h2 {
+    font-family: "Quicksand", sans-serif;
+}
+.bidangkerja-section .box-bidangkerja {
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 40px;
+}
+.bidangkerja-section .box-bidangkerja img {
+    width: 100%;
+    /* border-radius: 20px; */
+}
+.bidangkerja-section .box-bidangkerja h4 {
+    text-align: center;
+    margin: 20px 0 10px 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+.bidangkerja-section .box-bidangkerja p {
+    font-size: 16px;
+    text-align: justify;
+    font-weight: 300;
+    line-height: 30px;
+}
+/* ====================================================== */
+/* end style for homepage */
+/* ====================================================== */

@@ -7,3 +7,4 @@ use Illuminate\Support\Facades\Route;
 // Route for client page
 // ====================
 Route::get('/', [ClientHomeController::class, 'index'])->name('client.home.index');
+Route::get('/get-bidangkerja', [ClientHomeController::class, 'getBidangKerja'])->name('client.home.get.bidangkerja');

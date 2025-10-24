@@ -14,15 +14,16 @@
     {{-- Font Awesome CDN --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    {{-- jQuery --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     {{-- CSS File --}}
     <link rel="stylesheet" href="/assets/css/style.css">
   </head>
   <body>
 
     {{-- include navbar from partials --}}
-    <div class="container-fluid">
-      @include('client-page.partials.navbar')
-    </div>
+    @include('client-page.partials.navbar')
 
     {{-- main content --}}
     @yield('body')
