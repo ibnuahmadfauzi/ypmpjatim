@@ -7,25 +7,23 @@
                     <p>
                         <span class="fw-bold">Alamat:</span>
                         <br>
-                        Jl. KH. Abdul Fatah, No. 31, RT 003, RW 004, Jatinom, Kanigoro, kab. Blitar, 66171
+                        <span class="footer-alamat"></span>
                     </p>
                     <p>
                         <span class="fw-bold">No. Telp:</span>
                         <br>
-                        0857-5555-0745
-                        <br>
-                        0813-5808-5388
+                        <span class="footer-telepon"></span>
                     </p>
                     <p>
                         <span class="fw-bold">Email:</span>
                         <br>
-                        ypmpjatim@gmail.com
+                        <span class="footer-email"></span>
                     </p>
                 </div>
             </div>
             <div class="col-lg-6">
                 <h2 class="text-center text-light fw-bold">KIRIM PESAN</h2>
-                <form class="form-pesan-footer mb-5">
+                <form class="form-pesan-ypmpjatim@gmail.comfooter mb-5">
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-lg-6">

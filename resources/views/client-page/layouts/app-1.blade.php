@@ -43,6 +43,7 @@
     {{-- JS Blade --}}
     <script>
       const urlGetPartner = "{{ route('client.home.get.partner') }}";
+      const urlGetKontak = "{{ route('client.general.get.kontak') }}";
     </script>
 
     {{-- JS File --}}
