@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BidangKerja;
+use App\Models\Partner;
 use Illuminate\Http\Request;
 
 class ClientHomeController extends Controller
@@ -16,5 +17,11 @@ class ClientHomeController extends Controller
     {
         $bidang_kerja = BidangKerja::all();
         return response()->json($bidang_kerja);
+    }
+
+    public function getPartner()
+    {
+        $partner = Partner::all();
+        return response()->json($partner);
     }
 }

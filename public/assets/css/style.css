@@ -23,6 +23,22 @@ body {
     max-height: 50px;
 }
 
+/* styling for partner section */
+.partner-section {
+    background-color: #ffffff;
+    padding: 30px 0;
+}
+.partner-section h2 {
+    font-family: "Quicksand", sans-serif;
+}
+.partner-section #partner-list {
+    text-align: center;
+}
+.partner-section #partner-list img {
+    height: 100px;
+    margin: 10px 20px;
+}
+
 /* ====================================================== */
 /* style for homepage */
 /* ====================================================== */
@@ -87,7 +103,6 @@ body {
 }
 .bidangkerja-section .box-bidangkerja img {
     width: 100%;
-    /* border-radius: 20px; */
 }
 .bidangkerja-section .box-bidangkerja h4 {
     text-align: center;
@@ -100,6 +115,23 @@ body {
     text-align: justify;
     font-weight: 300;
     line-height: 30px;
+}
+
+/* style for artikel & berita */
+.artikelberita-section h6 {
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #8d826c;
+    color: #ffffff;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    border-radius: 6px;
+}
+.artikelberita-section #artikel-list,
+.artikelberita-section #berita-list {
+    text-align: center;
+    padding: 40px 0;
 }
 /* ====================================================== */
 /* end style for homepage */

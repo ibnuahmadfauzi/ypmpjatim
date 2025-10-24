@@ -60,3 +60,22 @@
         </div>
     </div>
 </div>
+
+<div class="container-fluid artikelberita-section">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <h6>Artikel Terbaru</h6>
+                <div id="artikel-list">
+                    <span>konten belum tersedia</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h6>Berita Terbaru</h6>
+                <div id="berita-list">
+                    <span>konten belum tersedia</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

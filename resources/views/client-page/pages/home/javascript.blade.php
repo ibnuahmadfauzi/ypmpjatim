@@ -10,7 +10,7 @@
                     html += `
                         <div class="col-lg-6">
                             <div class="box-bidangkerja shadow">
-                                <img src="/assets/images/bidangkerja/${bidangkerja.gambar}">
+                                <img src="/assets/images/bidangkerja/${bidangkerja.gambar}" alt="Yayasan Pengembangan Mutu Pendidikan - Jawa Timur">
                                 <div class="px-4 pb-4">
                                     <h4>${bidangkerja.nama_bidang}</h4>
                                     <p>${bidangkerja.deskripsi}</p>
