@@ -152,3 +152,74 @@ body {
 /* ====================================================== */
 /* end style for homepage */
 /* ====================================================== */
+
+/* ====================================================== */
+/* ========== MOBILE (default) ========== */
+/* ====================================================== */
+@media (max-width: 600px) {
+    .hero-section .hero-welcome h1 {
+        font-size: 35px;
+    }
+    .hero-section .hero-welcome h3 {
+        font-size: 20px;
+    }
+
+    .hero-section img {
+        border-radius: 5px !important;
+        margin-bottom: 30px;
+    }
+
+    .banner-section img {
+        border-radius: 0 !important;
+        height: 400px;
+        width: auto;
+    }
+    .banner-section .container {
+        overflow-x: auto;
+    }
+
+    .tentangkami-section p {
+        font-size: 14px;
+    }
+
+    .bidangkerja-section p {
+        font-size: 14px;
+    }
+}
+
+/* ====================================================== */
+/* ========== TABLET ========== */
+/* ====================================================== */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .hero-section .hero-welcome h1 {
+        font-size: 35px;
+    }
+    .hero-section .hero-welcome h3 {
+        font-size: 20px;
+    }
+    .hero-section img {
+        border-radius: 5px !important;
+        margin-bottom: 30px;
+    }
+
+    .banner-section img {
+        border-radius: 0 !important;
+        height: 400px;
+        width: auto;
+    }
+    .banner-section .container {
+        overflow-x: auto;
+    }
+
+    .tentangkami-section img {
+        width: 200px;
+        margin: 30px 0;
+    }
+    .tentangkami-section p {
+        font-size: 20px;
+    }
+
+    .bidangkerja-section p {
+        font-size: 20px;
+    }
+}
