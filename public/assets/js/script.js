@@ -1,5 +1,17 @@
 $(document).ready(function () {
     // ===========================================================
+    // setup ajax general setting
+    // ===========================================================
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+    });
+    // ===========================================================
+    // end setup ajax general setting
+    // ===========================================================
+
+    // ===========================================================
     // get partner data to display in footer
     // ===========================================================
     $.ajax({
@@ -51,5 +63,45 @@ $(document).ready(function () {
     });
     // ===========================================================
     // end get kontak data to display in footer
+    // ===========================================================
+
+    // ===========================================================
+    // store pesan post to database
+    // ===========================================================
+    $("#footer-pesan-form").on("submit", function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: urlStorePesan,
+            type: "POST",
+            data: {
+                nama: $("#input-pesan-nama").val(),
+                email: $("#input-pesan-email").val(),
+                subjek: $("#input-pesan-subjek").val(),
+                pesan: $("#input-pesan-pesan").val(),
+            },
+            success: function (response) {
+                Swal.fire({
+                    title: "Pesan Terkirim",
+                    text: "kami akan balas melalui email yang tertera",
+                    icon: "success",
+                });
+            },
+            error: function (xhr) {
+                Swal.fire({
+                    title: "Pesan Gagal Terkirim",
+                    text: "periksa koneksi internet anda",
+                    icon: "error",
+                });
+            },
+        });
+
+        $("#input-pesan-nama").val("");
+        $("#input-pesan-email").val("");
+        $("#input-pesan-subjek").val("");
+        $("#input-pesan-pesan").val("");
+    });
+    // ===========================================================
+    // end store pesan post to database
     // ===========================================================
 });

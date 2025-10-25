@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yayasan Pengembangan Mutu Pendidikan - Jawa Timur</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('page-title') | Yayasan Pengembangan Mutu Pendidikan - Jawa Timur</title>
 
     {{-- Favicon --}}
     <link rel="shortcut icon" href="/assets/images/logo/logo-ypmp.ico">
@@ -33,7 +34,10 @@
 
     {{-- include footer section from partials --}}
     @include('client-page.partials.footer')
-    
+ 
+    {{-- Sweetalert 2 --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     {{-- Bootstrap CDN --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     
@@ -44,6 +48,7 @@
     <script>
       const urlGetPartner = "{{ route('client.general.get.partner') }}";
       const urlGetKontak = "{{ route('client.general.get.kontak') }}";
+      const urlStorePesan = "{{ route('client.home.store.pesan') }}";
     </script>
 
     {{-- JS File --}}

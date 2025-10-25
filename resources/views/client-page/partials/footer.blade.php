@@ -23,7 +23,8 @@
             </div>
             <div class="col-lg-6">
                 <h2 class="text-center text-light fw-bold">KIRIM PESAN</h2>
-                <form class="form-pesan-ypmpjatim@gmail.comfooter mb-5">
+                <form class="form-pesan-ypmpjatim@gmail.comfooter mb-5" id="footer-pesan-form">
+                    @csrf
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-lg-6">
