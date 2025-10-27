@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClientGeneralController;
 use App\Http\Controllers\ClientHomeController;
 use Illuminate\Support\Facades\Route;
@@ -14,3 +15,12 @@ Route::get('/get-partner', [ClientGeneralController::class, 'getPartner'])->name
 Route::get('/get-kontak', [ClientGeneralController::class, 'getKontak'])->name('client.general.get.kontak');
 Route::post('/store-pesan', [ClientHomeController::class, 'storePesan'])->name('client.home.store.pesan');
 // === end HomePage ===
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.process');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// route dashboard (hanya bisa diakses jika login)
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware('auth');
