@@ -154,6 +154,22 @@ body {
 /* ====================================================== */
 
 /* ====================================================== */
+/* end style for tentangkamipage */
+/* ====================================================== */
+.tentangkami-page {
+    font-family: "Poppins", sans-serif;
+}
+.tentangkami-page p {
+    text-align: justify;
+    line-height: 35px;
+    font-size: 18px;
+    font-weight: 300;
+}
+.tentangkami-page h2 {
+    margin-bottom: 50px;
+}
+
+/* ====================================================== */
 /* ========== MOBILE (default) ========== */
 /* ====================================================== */
 @media (max-width: 600px) {
@@ -184,6 +200,33 @@ body {
 
     .bidangkerja-section p {
         font-size: 14px;
+    }
+
+    .tentangkami-page p {
+        font-size: 14px;
+    }
+    .tentangkami-page h2 {
+        margin-bottom: 10px;
+    }
+    .tentangkami-page .p-3 {
+        padding: 0 !important;
+    }
+    .tentangkami-page .py-5 {
+        padding: 0 !important;
+    }
+    .tentangkami-page .px-3 {
+        padding: 0 !important;
+    }
+    .tentangkami-page .pt-3 {
+        padding: 0 !important;
+    }
+    .tentangkami-page .logo {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .tentangkami-page .office {
+        border-radius: 0 !important;
+        margin-top: 30px;
     }
 }
 
@@ -221,5 +264,32 @@ body {
 
     .bidangkerja-section p {
         font-size: 20px;
+    }
+
+    .tentangkami-page p {
+        font-size: 18px;
+    }
+    .tentangkami-page h2 {
+        margin-bottom: 10px;
+    }
+    .tentangkami-page .p-3 {
+        padding: 0 !important;
+    }
+    .tentangkami-page .py-5 {
+        padding: 0 !important;
+    }
+    .tentangkami-page .px-3 {
+        padding: 0 !important;
+    }
+    .tentangkami-page .pt-3 {
+        padding: 0 !important;
+    }
+    .tentangkami-page .logo {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .tentangkami-page .office {
+        border-radius: 0 !important;
+        margin-top: 30px;
     }
 }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClientGeneralController;
 use App\Http\Controllers\ClientHomeController;
+use App\Http\Controllers\ClientTentangKamiController;
 use Illuminate\Support\Facades\Route;
 
 // ====================
@@ -15,6 +16,11 @@ Route::get('/get-partner', [ClientGeneralController::class, 'getPartner'])->name
 Route::get('/get-kontak', [ClientGeneralController::class, 'getKontak'])->name('client.general.get.kontak');
 Route::post('/store-pesan', [ClientHomeController::class, 'storePesan'])->name('client.home.store.pesan');
 // === end HomePage ===
+
+// === TentangKamiPage ===
+Route::get('/tentang-kami', [ClientTentangKamiController::class, 'index'])->name('client.tentang-kami.index');
+// === end TentangKamiPage ===
+
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.process');
