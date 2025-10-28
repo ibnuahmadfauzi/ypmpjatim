@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClientBidangKerjaKonsultasiPendidikanController;
 use App\Http\Controllers\ClientGeneralController;
 use App\Http\Controllers\ClientHomeController;
 use App\Http\Controllers\ClientTentangKamiController;
@@ -21,6 +22,9 @@ Route::post('/store-pesan', [ClientHomeController::class, 'storePesan'])->name('
 Route::get('/tentang-kami', [ClientTentangKamiController::class, 'index'])->name('client.tentang-kami.index');
 // === end TentangKamiPage ===
 
+// === BidangKerjaPage ===
+Route::get('/bidang-kerja', [ClientBidangKerjaKonsultasiPendidikanController::class, 'index'])->name('client.bidang-kerja.konsultasi-pendidikan-index');
+// === end BidangKerjaPage ===
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.process');

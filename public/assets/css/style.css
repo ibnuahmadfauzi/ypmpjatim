@@ -10,9 +10,19 @@ body {
 .bg-light {
     background-color: #ffffff !important;
 }
+.bg-primary {
+    background-color: #8d826c !important;
+}
+.text-light {
+    color: #ffffff !important;
+}
 .btn-primary {
     background-color: #8d826c !important;
     border-color: #8d826c !important;
+}
+.list-group .active {
+    background-color: #a1a1a1 !important;
+    border: none;
 }
 
 /* styling for navbar */
