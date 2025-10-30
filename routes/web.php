@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClientBidangKerjaKonsultasiPendidikanController;
+use App\Http\Controllers\ClientBidangKerjaPenerbitanBukuController;
 use App\Http\Controllers\ClientGeneralController;
 use App\Http\Controllers\ClientHomeController;
 use App\Http\Controllers\ClientTentangKamiController;
@@ -23,7 +24,8 @@ Route::get('/tentang-kami', [ClientTentangKamiController::class, 'index'])->name
 // === end TentangKamiPage ===
 
 // === BidangKerjaPage ===
-Route::get('/bidang-kerja', [ClientBidangKerjaKonsultasiPendidikanController::class, 'index'])->name('client.bidang-kerja.konsultasi-pendidikan-index');
+Route::get('/bidang-kerja/konsultasi-pendidikan', [ClientBidangKerjaKonsultasiPendidikanController::class, 'index'])->name('client.bidang-kerja.konsultasi-pendidikan-index');
+Route::get('/bidang-kerja/penerbitan-buku', [ClientBidangKerjaPenerbitanBukuController::class, 'index'])->name('client.bidang-kerja.penerbitan-buku-index');
 // === end BidangKerjaPage ===
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

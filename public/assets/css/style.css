@@ -16,6 +16,9 @@ body {
 .text-light {
     color: #ffffff !important;
 }
+.text-justify {
+    text-align: justify;
+}
 .btn-primary {
     background-color: #8d826c !important;
     border-color: #8d826c !important;
