@@ -104,4 +104,14 @@ $(document).ready(function () {
     // ===========================================================
     // end store pesan post to database
     // ===========================================================
+
+    // Member Area Temprorary Button
+    $(".memberarea-btn").on("click", function () {
+        Swal.fire({
+            title: "Pemberitahuan",
+            text: "mohon maaf fitur belum tersedia",
+            icon: "warning",
+            confirmButtonText: "Tutup",
+        });
+    });
 });

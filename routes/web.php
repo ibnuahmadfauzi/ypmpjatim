@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClientArtikelController;
+use App\Http\Controllers\ClientBeritaController;
 use App\Http\Controllers\ClientBidangKerjaDiklatController;
 use App\Http\Controllers\ClientBidangKerjaKonsultasiPendidikanController;
 use App\Http\Controllers\ClientBidangKerjaPenerbitanBukuController;
@@ -37,6 +39,14 @@ Route::get('/bidang-kerja/pengerjaan-pmm-guru', [ClientBidangKerjaPengerjaanPMMC
 Route::get('/bidang-kerja/pengerjaan-akreditasi-sekolah', [ClientBidangKerjaPengerjaanAkreditasiSekolahController::class, 'index'])->name('client.bidang-kerja.pengerjaan-akreditasi-sekolah.index');
 Route::get('/bidang-kerja/pengerjaan-sertifikasi-guru', [ClientBidangKerjaPengerjaanSertifikasiGuruController::class, 'index'])->name('client.bidang-kerja.pengerjaan-sertifikasi-guru.index');
 // === end BidangKerjaPage ===
+
+// === ArtikelPage ===
+Route::get('/artikel', [ClientArtikelController::class, 'index'])->name('client.artikel.index');
+// === end ArtikelPage ===
+
+// === BeritaPage ===
+Route::get('/berita', [ClientBeritaController::class, 'index'])->name('client.berita.index');
+// === end BeritaPage ===
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.process');

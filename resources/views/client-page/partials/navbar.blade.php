@@ -27,14 +27,14 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link fw-semibold" href="#">Artikel</a>
+                <a class="nav-link fw-semibold" href="{{ route('client.artikel.index') }}">Artikel</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link fw-semibold" href="#">Berita</a>
+                <a class="nav-link fw-semibold" href="{{ route('client.berita.index') }}">Berita</a>
             </li>
         </ul>
         <div>
-            <a href="#" class="btn btn-primary btn-sm px-3">
+            <a type="button" class="btn btn-primary btn-sm px-3 memberarea-btn">
                 <i class="fa-solid fa-users"></i> Member Area
             </a>
         </div>
