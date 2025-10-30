@@ -5,6 +5,7 @@ use App\Http\Controllers\ClientBidangKerjaDiklatController;
 use App\Http\Controllers\ClientBidangKerjaKonsultasiPendidikanController;
 use App\Http\Controllers\ClientBidangKerjaPenerbitanBukuController;
 use App\Http\Controllers\ClientBidangKerjaPenerbitanJurnalController;
+use App\Http\Controllers\ClientBidangKerjaPengerjaanPMMController;
 use App\Http\Controllers\ClientGeneralController;
 use App\Http\Controllers\ClientHomeController;
 use App\Http\Controllers\ClientTentangKamiController;
@@ -30,6 +31,7 @@ Route::get('/bidang-kerja/konsultasi-pendidikan', [ClientBidangKerjaKonsultasiPe
 Route::get('/bidang-kerja/penerbitan-buku', [ClientBidangKerjaPenerbitanBukuController::class, 'index'])->name('client.bidang-kerja.penerbitan-buku.index');
 Route::get('/bidang-kerja/penerbitan-jurnal', [ClientBidangKerjaPenerbitanJurnalController::class, 'index'])->name('client.bidang-kerja.penerbitan-jurnal.index');
 Route::get('/bidang-kerja/diklat-workshop-seminar', [ClientBidangKerjaDiklatController::class, 'index'])->name('client.bidang-kerja.diklat.index');
+Route::get('/bidang-kerja/pengerjaan-pmm-guru', [ClientBidangKerjaPengerjaanPMMController::class, 'index'])->name('client.bidang-kerja.pengerjaan-pmm.index');
 // === end BidangKerjaPage ===
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
