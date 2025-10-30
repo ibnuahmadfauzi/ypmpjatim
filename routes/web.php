@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClientBidangKerjaDiklatController;
 use App\Http\Controllers\ClientBidangKerjaKonsultasiPendidikanController;
 use App\Http\Controllers\ClientBidangKerjaPenerbitanBukuController;
 use App\Http\Controllers\ClientBidangKerjaPenerbitanJurnalController;
@@ -25,9 +26,10 @@ Route::get('/tentang-kami', [ClientTentangKamiController::class, 'index'])->name
 // === end TentangKamiPage ===
 
 // === BidangKerjaPage ===
-Route::get('/bidang-kerja/konsultasi-pendidikan', [ClientBidangKerjaKonsultasiPendidikanController::class, 'index'])->name('client.bidang-kerja.konsultasi-pendidikan-index');
-Route::get('/bidang-kerja/penerbitan-buku', [ClientBidangKerjaPenerbitanBukuController::class, 'index'])->name('client.bidang-kerja.penerbitan-buku-index');
-Route::get('/bidang-kerja/penerbitan-jurnal', [ClientBidangKerjaPenerbitanJurnalController::class, 'index'])->name('client.bidang-kerja.penerbitan-jurnal-index');
+Route::get('/bidang-kerja/konsultasi-pendidikan', [ClientBidangKerjaKonsultasiPendidikanController::class, 'index'])->name('client.bidang-kerja.konsultasi-pendidikan.index');
+Route::get('/bidang-kerja/penerbitan-buku', [ClientBidangKerjaPenerbitanBukuController::class, 'index'])->name('client.bidang-kerja.penerbitan-buku.index');
+Route::get('/bidang-kerja/penerbitan-jurnal', [ClientBidangKerjaPenerbitanJurnalController::class, 'index'])->name('client.bidang-kerja.penerbitan-jurnal.index');
+Route::get('/bidang-kerja/diklat-workshop-seminar', [ClientBidangKerjaDiklatController::class, 'index'])->name('client.bidang-kerja.diklat.index');
 // === end BidangKerjaPage ===
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

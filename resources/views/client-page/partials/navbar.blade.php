@@ -16,10 +16,10 @@
                     Bidang Kerja
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="{{ route('client.bidang-kerja.konsultasi-pendidikan-index') }}">Konsultasi Pendidikan</a></li>
-                    <li><a class="dropdown-item" href="{{ route('client.bidang-kerja.penerbitan-buku-index') }}">Penerbitan Buku</a></li>
-                    <li><a class="dropdown-item" href="#">Penerbitan Jurnal</a></li>
-                    <li><a class="dropdown-item" href="#">Diklat, Workshop, dan Seminar</a></li>
+                    <li><a class="dropdown-item" href="{{ route('client.bidang-kerja.konsultasi-pendidikan.index') }}">Konsultasi Pendidikan</a></li>
+                    <li><a class="dropdown-item" href="{{ route('client.bidang-kerja.penerbitan-buku.index') }}">Penerbitan Buku</a></li>
+                    <li><a class="dropdown-item" href="{{ route('client.bidang-kerja.penerbitan-jurnal.index') }}">Penerbitan Jurnal</a></li>
+                    <li><a class="dropdown-item" href="{{ route('client.bidang-kerja.diklat.index') }}">Diklat, Workshop, dan Seminar</a></li>
                     <li><a class="dropdown-item" href="#">Pengerjaan PMM Guru</a></li>
                     <li><a class="dropdown-item" href="#">Pengerjaan Akreditasi Sekolah</a></li>
                     <li><a class="dropdown-item" href="#">Pengerjaan Sertifikasi Guru</a></li>
