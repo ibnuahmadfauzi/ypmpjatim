@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClientArtikelController;
 use App\Http\Controllers\ClientBeritaController;
@@ -48,11 +49,15 @@ Route::get('/artikel', [ClientArtikelController::class, 'index'])->name('client.
 Route::get('/berita', [ClientBeritaController::class, 'index'])->name('client.berita.index');
 // === end BeritaPage ===
 
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login.process');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+// === Auth ===
+Route::get('/admin/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/admin/login', [AuthController::class, 'login'])->name('login.process');
+Route::get('/admin/logout', [AuthController::class, 'logout'])->name('logout');
+// === end Auth ===
 
 // route dashboard (hanya bisa diakses jika login)
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard.index')->middleware('auth');
+
+Route::get('/member-area/dashboard', function () {
+    return view('client-page.pages.member-area.dashboard.index');
 })->middleware('auth');

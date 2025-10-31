@@ -14,16 +14,34 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        // Validasi input login
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
+        // Coba login
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+
+            // Ambil user yang sedang login
+            $user = Auth::user();
+
+            // Cek role user dan arahkan sesuai role
+            if ($user->role === 'admin') {
+                return redirect()->intended('/admin/dashboard');
+            } elseif ($user->role === 'member') {
+                return redirect()->intended('/member-area/dashboard');
+            } else {
+                // Jika role tidak dikenali, logout dan tampilkan error
+                Auth::logout();
+                return redirect('/login')->withErrors([
+                    'email' => 'Role pengguna tidak dikenali.',
+                ]);
+            }
         }
 
+        // Jika gagal login
         return back()->withErrors([
             'email' => 'Email atau password salah.',
         ])->onlyInput('email');
@@ -36,6 +54,6 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/admin/login');
     }
 }

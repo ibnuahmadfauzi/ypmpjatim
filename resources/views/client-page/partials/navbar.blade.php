@@ -34,7 +34,7 @@
             </li>
         </ul>
         <div>
-            <a type="button" class="btn btn-primary btn-sm px-3 memberarea-btn">
+            <a href="{{ route('login') }}" class="btn btn-primary btn-sm px-3">
                 <i class="fa-solid fa-users"></i> Member Area
             </a>
         </div>
