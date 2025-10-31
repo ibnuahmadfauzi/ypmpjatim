@@ -18,7 +18,7 @@
         <hr>
         <div id="sidebar-menu">
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">
+                <a href="{{ route('admin.dashboard.index') }}" class="list-group-item list-group-item-action">
                     <span style="width: 25px; display: inline-block;"><i class="fa-solid fa-gauge"></i></span> Dashboard
                 </a>
                 <a href="#" class="list-group-item list-group-item-action">
@@ -36,7 +36,7 @@
                 <a href="#" class="list-group-item list-group-item-action">
                     <span style="width: 25px; display: inline-block;"><i class="fa-solid fa-briefcase"></i></span> Bidang Kerja
                 </a>
-                <a href="#" class="list-group-item list-group-item-action">
+                <a href="{{ route('admin.pesan.index') }}" class="list-group-item list-group-item-action">
                     <span style="width: 25px; display: inline-block;"><i class="fa-solid fa-envelope"></i></span> Pesan
                 </a>
                 <a href="#" class="list-group-item list-group-item-action">

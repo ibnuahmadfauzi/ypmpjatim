@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('page-title') | Content Management System | Yayasan Pengembangan Mutu Pendidikan - Jawa Timur</title>
 
-    {{-- Favicon --}}
+    {{-- Favicon CDN --}}
     <link rel="shortcut icon" href="/assets/images/logo/logo-ypmp.ico">
 
     {{-- Bootstrap CDN --}}
@@ -15,8 +15,11 @@
     {{-- Font Awesome CDN --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    {{-- jQuery --}}
+    {{-- jQuery CDN --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    {{-- Datatable CDN --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 
     {{-- CSS File --}}
     <link rel="stylesheet" href="/assets/css/dashboard-style.css">
@@ -35,7 +38,7 @@
       </div>
     </div>
  
-    {{-- Sweetalert 2 --}}
+    {{-- Sweetalert 2 CDN --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     {{-- Bootstrap CDN --}}
@@ -43,6 +46,9 @@
     
     {{-- Font Awesome CDN --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    {{-- jQuery Datatable CDN --}}
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
     {{-- JS File --}}
     <script src="/assets/js/dashboard-script.js"></script>

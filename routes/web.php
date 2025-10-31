@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminPesanController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClientArtikelController;
 use App\Http\Controllers\ClientBeritaController;
@@ -55,9 +56,33 @@ Route::post('/admin/login', [AuthController::class, 'login'])->name('login.proce
 Route::get('/admin/logout', [AuthController::class, 'logout'])->name('logout');
 // === end Auth ===
 
-// route dashboard (hanya bisa diakses jika login)
-Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard.index')->middleware('auth');
+// ====================
+// end Route for client page
+// ====================
 
+// ====================
+// Route for admin page
+// ====================
+
+// === DashboardPage ===
+Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard.index')->middleware('auth');
+// === end DashboardPage ===
+
+// === PesanPage ===
+Route::get('/admin/pesan', [AdminPesanController::class, 'index'])->name('admin.pesan.index')->middleware('auth');
+Route::get('/admin/pesan/datatables', [AdminPesanController::class, 'getPesanDatatables'])->name('admin.pesan.getPesanDatatables')->middleware('auth');
+// === end PesanPage ===
+
+// ====================
+// end Route for admin page
+// ====================
+
+// ====================
+// Route for member-area page
+// ====================
+
+// === DashboardPage ===
 Route::get('/member-area/dashboard', function () {
     return view('client-page.pages.member-area.dashboard.index');
 })->middleware('auth');
+// === end DashboardPage ===
