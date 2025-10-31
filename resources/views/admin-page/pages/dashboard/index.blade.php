@@ -1,5 +1,5 @@
 @extends('admin-page.layouts.app-1')
-@section('name', 'page-title')
+@section('page-title', 'Dashboard')
 
 @section('body')
     @include('admin-page.pages.dashboard.html')
