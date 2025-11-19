@@ -1,7 +1,7 @@
 <aside>
     <div class="mb-5">
-        <form>
-            <input type="text" class="form-control mb-2" placeholder="Apa Yang Kamu Cari ?">
+        <form id="form-cari-artikel">
+            <input type="text" id="input-katakunci-artikel" class="form-control mb-2" placeholder="Apa Yang Kamu Cari ?">
             <button type="submit" class="btn btn-primary btn-sm w-100"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
     </div>

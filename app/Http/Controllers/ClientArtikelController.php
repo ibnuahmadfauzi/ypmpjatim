@@ -6,12 +6,28 @@ use Illuminate\Http\Request;
 
 class ClientArtikelController extends Controller
 {
-    public function index()
+    public function index($keyword = "empty")
     {
-        $semua_artikel = Artikel::orderBy('id', 'DESC')->paginate(4);
-        return view('client-page.pages.artikel.index', [
-            'semua_artikel' => $semua_artikel
-        ]);
+        if($keyword == "empty" || $keyword == null) 
+        {
+            $semua_artikel = Artikel::orderBy('id', 'DESC')->paginate(4);
+            return view('client-page.pages.artikel.index', [
+                'semua_artikel' => $semua_artikel
+            ]);
+        }
+        else
+        {
+            $semua_artikel = Artikel::when($keyword, function($query) use ($keyword) {
+                $query->where('judul', 'like', '%' . $keyword . '%');
+            })
+            ->orderBy('id', 'DESC')
+            ->paginate(4);
+
+            return view('client-page.pages.artikel.index', [
+                'semua_artikel' => $semua_artikel,
+                'keyword' => $keyword
+            ]);
+        }
     }
 
     public function getLastArtikel()

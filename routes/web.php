@@ -44,7 +44,11 @@ Route::get('/bidang-kerja/pengerjaan-sertifikasi-guru', [ClientBidangKerjaPenger
 
 // === ArtikelPage ===
 Route::get('/artikel', [ClientArtikelController::class, 'index'])->name('client.artikel.index');
+Route::get('/artikel/cari', function() {
+    return redirect('/artikel');
+});
 Route::get('/artikel/{slug}', [ClientArtikelController::class, 'show'])->name('client.artikel.show');
+Route::get('/artikel/cari/{keyword}', [ClientArtikelController::class, 'index'])->name('client.artikel.search');
 Route::get('/artikel/get/last-artikel', [ClientArtikelController::class, 'getLastArtikel'])->name('client.artikel.getLastArtikel');
 // === end ArtikelPage ===
 
