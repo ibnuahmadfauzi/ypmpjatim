@@ -30,3 +30,46 @@
         });
     });
 </script>
+
+<script>
+    $(document).ready(function() {
+        function generateExcerpt(text, limit = 20) {
+            const cleanText = text.replace(/<\/?[^>]+(>|$)/g, "");
+            const words = cleanText.split(/\s+/);
+            if (words.length <= limit) {
+                return words.join(" ");
+            }
+            return words.slice(0, limit).join(" ") + "...";
+        }
+
+        $.ajax({
+            url: "{{ route('client.artikel.getLastArtikel') }}",
+            type: "GET",
+            dataType: "json",
+            success: function (response) {
+                let htmlLastArtikel = '';
+                $.each(response, function (index, artikel) {
+                    htmlLastArtikel += `
+                        <a href="/artikel/${artikel.slug}" class="text-decoration-none text-dark">
+                        <div class="artikel-berita-item-home">
+                            <img src="/assets/images/artikel/${artikel.thumbnail}" alt="Yayasan Pengembangan Mutu Pendidikan - Jawa Timur">
+                            <div>
+                                <p class="text-start fw-semibold">
+                                    ${artikel.judul}
+                                </p>
+                                <div class="text-start">
+                                    <small>${generateExcerpt(artikel.body)}</small>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    `;
+                });
+                $("#artikel-list-container").html(htmlLastArtikel);
+            },
+            error: function (xhr, status, error) {
+                console.error("Terjadi kesalahan: ", error);
+            },
+        });
+    });
+</script>

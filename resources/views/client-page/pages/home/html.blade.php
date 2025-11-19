@@ -67,7 +67,10 @@
             <div class="col-lg-6">
                 <h6>Artikel Terbaru</h6>
                 <div id="artikel-list">
-                    <span>konten belum tersedia</span>
+                    <div id="artikel-list-container"></div>
+                    <div class="mt-4">
+                        <a href="{{ route('client.artikel.index') }}" class="btn btn-primary btn-sm"><i class="fa-solid fa-up-right-from-square"></i> Semua Artikel</a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6">

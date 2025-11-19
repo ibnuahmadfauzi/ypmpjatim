@@ -33,11 +33,11 @@
                 <a class="nav-link fw-semibold" href="{{ route('client.berita.index') }}">Berita</a>
             </li>
         </ul>
-        <div>
+        {{-- <div>
             <a href="{{ route('login') }}" class="btn btn-primary btn-sm px-3">
                 <i class="fa-solid fa-users"></i> Member Area
             </a>
-        </div>
+        </div> --}}
         </div>
     </div>
 </nav>

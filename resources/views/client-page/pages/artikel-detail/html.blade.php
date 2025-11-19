@@ -42,7 +42,7 @@
                                     {!! $artikel->body !!}
                                 </div>
 
-                                <div>
+                                <div class="artikel-detail-categories">
                                     @foreach ($categories ?? [] as $category)
                                         <span class="badge bg-primary">{{ $category }}</span>
                                     @endforeach
