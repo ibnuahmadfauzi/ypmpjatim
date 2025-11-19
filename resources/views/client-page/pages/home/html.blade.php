@@ -43,7 +43,7 @@
                     <p>
                         <strong>Yayasan Pengembangan Mutu Pendidikan - Jawa Timur (YPMP JATIM)</strong> adalah perusahaan yang berdedikasi untuk memajukan dunia pendidikan melalui penerbitan buku dan jurnal berkualitas serta berbagai program pelatihan, penelitian, dan akreditasi. Berdiri dengan komitmen untuk menyediakan sumber daya edukatif yang handal dan terpercaya, kami terus berupaya memberikan kontribusi nyata bagi kemajuan pendidikan di Indonesia.
                     </p>
-                    <a href="" class="btn btn-sm btn-primary fw-semibold"><i class="fa-solid fa-up-right-from-square"></i> Selengkapnya</a>
+                    <a href="{{ route('client.tentang-kami.index') }}" class="btn btn-sm btn-primary fw-semibold"><i class="fa-solid fa-up-right-from-square"></i> Selengkapnya</a>
                 </div>
             </div>
         </div>

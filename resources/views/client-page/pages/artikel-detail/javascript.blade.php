@@ -20,3 +20,14 @@
         });
     });
 </script>
+
+<script>
+    $(document).ready(function() {
+        $('#form-cari-artikel').on('submit', function(e) {
+            e.preventDefault();
+            let keyword = $('#input-katakunci-artikel').val();
+            let url = `/artikel/cari/${keyword}`;
+            window.location.href = url;
+        });
+    });
+</script>
