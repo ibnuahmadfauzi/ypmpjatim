@@ -92,3 +92,7 @@ Route::get('/member-area/dashboard', function () {
     return view('client-page.pages.member-area.dashboard.index');
 })->middleware('auth');
 // === end DashboardPage ===
+
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});

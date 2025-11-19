@@ -43,6 +43,12 @@ class ClientArtikelController extends Controller
     public function show($slug)
     {
         $artikel = Artikel::where('slug', '=', $slug)->first();
+        
+        if($artikel === null)
+        {
+            return response()->view('errors.404', [], 404);
+        }
+
         return view('client-page.pages.artikel-detail.index', [
             'artikel' => $artikel,
             'page_title' => $artikel->judul
