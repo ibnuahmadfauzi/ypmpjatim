@@ -26,6 +26,10 @@ class ClientArtikelController extends Controller
 
     public function show($slug)
     {
-        dd($slug);
+        $artikel = Artikel::where('slug', '=', $slug)->first();
+        return view('client-page.pages.artikel-detail.index', [
+            'artikel' => $artikel,
+            'page_title' => $artikel->judul
+        ]);
     }
 }

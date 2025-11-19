@@ -13,6 +13,9 @@ body {
 .bg-primary {
     background-color: #8d826c !important;
 }
+.text-primary {
+    color: #8d826c !important;
+}
 .text-light {
     color: #ffffff !important;
 }

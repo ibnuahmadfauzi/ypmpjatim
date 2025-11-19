@@ -74,7 +74,7 @@ class BidangKerjaSeeder extends Seeder
             'nama_bidang' => "Konsultan Pendidikan",
             'deskripsi' => "Konsultan pendidikan membantu meningkatkan kualitas pembelajaran melalui perancangan kurikulum, manajemen sekolah, dan penerapan teknologi. Dengan pendekatan berbasis riset, mereka memberikan solusi inovatif untuk sistem pendidikan yang lebih efektif.",
             'tautan' => "#",
-            'gambar' => "pengerjaan-sertifikasi-guru.jpg",
+            'gambar' => "konsultasi-pendidikan.jpg",
             'created_at' => now(),
             'updated_at' => now(),
         ]);
