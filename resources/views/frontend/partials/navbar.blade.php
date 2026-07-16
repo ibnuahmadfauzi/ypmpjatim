@@ -33,25 +33,43 @@
                     <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item" href="#">
-                                Pendidikan
+                                Konsultasi Pendidikan
                             </a>
                         </li>
 
                         <li>
                             <a class="dropdown-item" href="#">
-                                Pelatihan
+                                Penerbitan Buku
                             </a>
                         </li>
 
                         <li>
                             <a class="dropdown-item" href="#">
-                                Penelitian
+                                Penerbitan Jurnal
                             </a>
                         </li>
 
                         <li>
                             <a class="dropdown-item" href="#">
-                                Penerbitan
+                                Diklat, Workshop, dan Seminar
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                Pengerjaan PMM Guru
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                Pengerjaan Akreditasi Sekolah
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                Pengerjaan Sertifikasi Guru
                             </a>
                         </li>
                     </ul>
