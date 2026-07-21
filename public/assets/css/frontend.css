@@ -109,5 +109,66 @@ body {
     font-weight: 300;
     line-height: 30px;
 }
+.homepage-bidangkerja {
+    padding: 50px 0;
+}
+.homepage-bidangkerja h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.homepage-bidangkerja .bidang-kerja-box {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.homepage-bidangkerja .bidang-kerja-box img {
+    width: 100%;
+}
+.homepage-bidangkerja .bidang-kerja-box h4 {
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-align: center;
+    margin: 10px 0;
+}
+.homepage-bidangkerja .bidang-kerja-box p {
+    font-size: 1rem;
+    text-align: justify;
+    font-weight: 300;
+    line-height: 25px;
+}
+.homepage-bidangkerja .bidang-kerja-box .bidang-kerja-box-description {
+    padding: 20px;
+}
 /* end Style for Home Page */
+/* ========================================================= */
+
+/* ========================================================= */
+/* Style for Mobile Responsive */
+/* ========================================================= */
+@media (max-width: 991px) {
+    .homepage-hero {
+        padding: 50px 0;
+    }
+    .homepage-hero h1 {
+        font-weight: 700;
+        font-size: 2.5rem;
+    }
+    .homepage-hero h3 {
+        font-size: 1rem;
+    }
+    .homepage-banner {
+        padding: 10px 0;
+    }
+    .homepage-banner img {
+        border-radius: 0;
+    }
+    .homepage-tentang img {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+    .homepage-tentang p {
+        font-size: 1rem;
+        line-height: 25px;
+    }
+}
+/* end Style for Mobile Responsive */
 /* ========================================================= */
