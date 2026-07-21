@@ -181,3 +181,28 @@
         </div>
     </div>
 </section>
+
+<section class="homepage-artikel-berita container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h5>Artikel Terbaru</h5>
+                <div class="box-artikel-berita">
+                    <div class="d-flex justify-content-center py-4">
+                        <img src="https://i.pinimg.com/originals/cf/6f/cf/cf6fcf14be2cd01dd4923b36445ca632.gif"
+                            class="w-50" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h5>Berita Terbaru</h5>
+                <div class="box-artikel-berita">
+                    <div class="d-flex justify-content-center py-4">
+                        <img src="https://i.pinimg.com/originals/cf/6f/cf/cf6fcf14be2cd01dd4923b36445ca632.gif"
+                            class="w-50" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

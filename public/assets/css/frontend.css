@@ -138,6 +138,20 @@ body {
 .homepage-bidangkerja .bidang-kerja-box .bidang-kerja-box-description {
     padding: 20px;
 }
+.homepage-artikel-berita {
+    padding: 20px 0;
+}
+.homepage-artikel-berita h5 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 30px;
+    background-color: #7b705c;
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+}
 /* end Style for Home Page */
 /* ========================================================= */
 
