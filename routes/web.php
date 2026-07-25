@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BidangKerjaController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -15,8 +16,8 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
-
     Route::get('/admin', [AdminController::class, 'dashboard']);
+    Route::get('/admin/bidang-kerja', [BidangKerjaController::class, 'index'])->name('admin.bidang-kerja.index');
 });
 
 Route::middleware(['auth', 'member'])->group(function () {

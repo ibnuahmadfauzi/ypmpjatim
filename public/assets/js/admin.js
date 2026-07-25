@@ -1,0 +1,5 @@
+$(function () {
+    $("#menu-toggle").click(function () {
+        $("#sidebar").toggleClass("show");
+    });
+});

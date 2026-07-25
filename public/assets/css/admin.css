@@ -1,0 +1,159 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    font-family:
+        Segoe UI,
+        sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+
+#sidebar {
+    width: 260px;
+    background: #ffffff;
+    color: #373737;
+    transition: 0.3s;
+}
+
+.logo {
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo h4 {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.menu {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.menu li {
+    margin: 5px 15px;
+}
+
+.menu li a {
+    color: #373737;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.menu li a:hover {
+    background: #8d826c;
+    color: white;
+}
+
+.menu li.active a {
+    background: #8d826c;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Main */
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    height: 70px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.content {
+    padding: 30px;
+}
+
+/* Card */
+
+.dashboard-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.dashboard-card .icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #373737;
+    border-radius: 15px;
+    font-size: 25px;
+}
+
+.dashboard-card h3 {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.dashboard-card p {
+    margin: 0;
+    color: #666;
+}
+
+/* Mobile */
+
+@media (max-width: 991px) {
+    #sidebar {
+        position: fixed;
+        left: -260px;
+        top: 0;
+        height: 100%;
+        z-index: 999;
+    }
+
+    #sidebar.show {
+        left: 0;
+    }
+}
