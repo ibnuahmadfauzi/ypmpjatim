@@ -91,7 +91,7 @@
 
             <!-- Tombol Login -->
             <div class="d-flex">
-                <a href="#" class="btn btn-primary px-4">
+                <a href="/login" class="btn btn-primary px-4">
                     <i class="fa-solid fa-circle-user"></i> Masuk Akun
                 </a>
             </div>
