@@ -10,11 +10,12 @@
 
     <div class="profile">
 
-        <img src="https://i.pravatar.cc/150?img=5">
+        <img
+            src="https://static.vecteezy.com/system/resources/previews/038/568/316/non_2x/cat-icon-art-icons-and-graphics-vector.jpg">
 
         <div>
-            <strong>Administrator</strong><br>
-            <small>Super Admin</small>
+            <strong>{{ $user->name }}</strong><br>
+            <small>{{ $user->role }}</small>
         </div>
 
     </div>

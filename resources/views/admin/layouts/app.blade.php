@@ -21,6 +21,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     {{-- end CDN Fontawesome --}}
 
+    {{-- CDN Datatable --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
+    {{-- end CDN Datatable --}}
+
     {{-- CSS File --}}
     <link rel="stylesheet" href="/assets/css/admin.css">
     {{-- end CSS File --}}
@@ -28,6 +32,7 @@
     {{-- extra CSS File --}}
     @yield('extra-css')
     {{-- end extra CSS File --}}
+
 </head>
 
 <body>
@@ -69,6 +74,11 @@
         integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {{-- end jQuery CDN --}}
+
+    {{-- CDN Datatable --}}
+    <script src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.3.2/js/dataTables.bootstrap5.js"></script>
+    {{-- end CDN Datatable --}}
 
     <script src="/assets/js/admin.js"></script>
 
