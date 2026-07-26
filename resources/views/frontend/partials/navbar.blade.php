@@ -3,7 +3,8 @@
 
         <!-- Logo -->
         <a class="navbar-brand fw-bold" href="{{ route('frontend-home-index') }}">
-            <img src="/assets/images/logo-ypmpjatim-text.png" alt="Yayasan Pengembangan Mutu Pendidikan - Jawa Timur">
+            <img src={{ '/assets/images/' . $data_pengaturan->logo_navbar }}
+                alt="Yayasan Pengembangan Mutu Pendidikan - Jawa Timur">
         </a>
 
         <!-- Toggle Button -->

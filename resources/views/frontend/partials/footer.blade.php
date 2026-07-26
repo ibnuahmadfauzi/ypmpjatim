@@ -11,6 +11,35 @@
     </div>
 </section>
 
+<?php
+function formatNomorTelepon($nomor)
+{
+    // Pisahkan berdasarkan koma
+    $nomorList = array_map('trim', explode(',', $nomor));
+
+    // Format setiap nomor
+    $hasil = array_map(function ($item) {
+        // Ambil hanya angka
+        $item = preg_replace('/\D/', '', $item);
+
+        // Format 4-4-4 (12 digit)
+        if (strlen($item) == 12) {
+            return substr($item, 0, 4) . '-' . substr($item, 4, 4) . '-' . substr($item, 8, 4);
+        }
+
+        // Format 4-4-5 (13 digit)
+        if (strlen($item) == 13) {
+            return substr($item, 0, 4) . '-' . substr($item, 4, 4) . '-' . substr($item, 8, 5);
+        }
+
+        // Jika panjang tidak sesuai, kembalikan apa adanya
+        return $item;
+    }, $nomorList);
+
+    return implode('<br>', $hasil);
+}
+?>
+
 <footer class="container-fluid">
     <div class="container">
         <div class="row">
@@ -20,21 +49,19 @@
                     <p>
                         <strong>Alamat:</strong>
                         <br>
-                        Jl. KH. Abdul Fatah, No. 31, RT 003, RW 004, Jatinom, Kanigoro, kab. Blitar, 66171
+                        {{ $data_pengaturan->alamat }}
                     </p>
                     <p>
                         <strong>No. Telp:</strong>
                         <br>
-                        0857-5555-0745
-                        <br>
-                        0813-5808-5388
+                        {!! formatNomorTelepon($data_pengaturan->notelp) !!}
                     </p>
                     <p>
                         <strong>
                             Email:
                         </strong>
                         <br>
-                        ypmpjatim@gmail.com
+                        {{ $data_pengaturan->email }}
                     </p>
                 </div>
                 <br><br>

@@ -8,7 +8,7 @@
     <ul class="menu">
 
         <li class="admin-dashboard-menu">
-            <a href="#">
+            <a href="{{ route('admin.dashboard.index') }}">
                 <i class="fa-solid fa-gauge"></i>
                 Dashboard
             </a>
@@ -35,8 +35,8 @@
             </a>
         </li>
 
-        <li>
-            <a href="#">
+        <li class="admin-pengaturan-menu">
+            <a href="{{ route('admin.pengaturan.index') }}">
                 <i class="fa-solid fa-gear"></i>
                 Pengaturan
             </a>
