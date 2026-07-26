@@ -193,6 +193,10 @@
 
                     </button>
 
+                    <div class="mt-3 text-center">
+                        <a href="#" class="fw-semibold">daftar sebagai anggota</a>
+                    </div>
+
                 </div>
 
             </form>

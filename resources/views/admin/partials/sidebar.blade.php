@@ -15,9 +15,30 @@
         </li>
 
         <li class="admin-artikel-menu">
-            <a href="#">
+            <a href="{{ route('admin.artikel.index') }}">
                 <i class="fa-solid fa-blog"></i>
                 Artikel
+            </a>
+        </li>
+
+        <li class="admin-berita-menu">
+            <a href="{{ route('admin.berita.index') }}">
+                <i class="fa-solid fa-newspaper"></i>
+                Berita
+            </a>
+        </li>
+
+        <li class="admin-buku-menu">
+            <a href="{{ route('admin.buku.index') }}">
+                <i class="fa-solid fa-book"></i>
+                Buku
+            </a>
+        </li>
+
+        <li class="admin-penerbitanbuku-menu">
+            <a href="{{ route('admin.penerbitan-buku.index') }}">
+                <i class="fa-solid fa-certificate"></i>
+                Pengajuan Penerbitan
             </a>
         </li>
 
@@ -29,9 +50,16 @@
         </li>
 
         <li class="admin-pesan-menu">
-            <a href="#">
+            <a href="{{ route('admin.pesan.index') }}">
                 <i class="fa-solid fa-message"></i>
                 Pesan
+            </a>
+        </li>
+
+        <li class="admin-member-menu">
+            <a href="{{ route('admin.member.index') }}">
+                <i class="fa-solid fa-people-group"></i>
+                Member
             </a>
         </li>
 

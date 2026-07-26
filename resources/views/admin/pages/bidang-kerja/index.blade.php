@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('page-title', 'Bidang Kerja')
+@section('page-title', 'Data Bidang Kerja')
 
 @section('extra-css')
     @include('admin.pages.bidang-kerja.css')

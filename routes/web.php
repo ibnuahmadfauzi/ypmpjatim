@@ -1,9 +1,14 @@
 <?php
 
+use App\Http\Controllers\Admin\ArtikelController;
+use App\Http\Controllers\Admin\BeritaController;
 use App\Http\Controllers\Admin\BidangKerjaController;
+use App\Http\Controllers\Admin\BukuController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\MemberController as AdminMemberController;
+use App\Http\Controllers\Admin\PenerbitanBukuController;
 use App\Http\Controllers\Admin\PengaturanController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\PesanController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\MemberController;
@@ -23,6 +28,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::redirect('/admin', '/admin/dashboard');
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard.index');
     Route::get('/admin/bidang-kerja', [BidangKerjaController::class, 'index'])->name('admin.bidang-kerja.index');
+    Route::get('/admin/buku', [BukuController::class, 'index'])->name('admin.buku.index');
+    Route::get('/admin/pengajuan-penerbitan', [PenerbitanBukuController::class, 'index'])->name('admin.penerbitan-buku.index');
+    Route::get('/admin/artikel', [ArtikelController::class, 'index'])->name('admin.artikel.index');
+    Route::get('/admin/berita', [BeritaController::class, 'index'])->name('admin.berita.index');
+    Route::get('/admin/member', [AdminMemberController::class, 'index'])->name('admin.member.index');
+    Route::get('/admin/pesan', [PesanController::class, 'index'])->name('admin.pesan.index');
     Route::get('/admin/pengaturan', [PengaturanController::class, 'index'])->name('admin.pengaturan.index');
 });
 

@@ -1,7 +1,7 @@
 <script>
     $(document).ready(function() {
-        $('.admin-bidangkerja-menu').addClass('active');
-        $("#tableBidangKerja").DataTable({
+        $('.admin-member-menu').addClass('active');
+        $("#tableDaftarMember").DataTable({
             responsive: true,
 
             autoWidth: false,
@@ -31,5 +31,5 @@
                 targets: 1,
             }, ],
         });
-    });
+    })
 </script>
