@@ -69,26 +69,30 @@ function formatNomorTelepon($nomor)
             <div class="col-lg-6">
                 <h2>KIRIM PESAN</h2>
                 <div class="footer-content">
-                    <form action="">
+                    <form action="" id="formPesan">
+                        @csrf
                         <div class="mb-3">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <label for="pesan-nama" class="form-label">Nama:</label>
-                                    <input type="text" class="form-control" id="pesan-nama" placeholder="...">
+                                    <label for="pesanNama" class="form-label">Nama:</label>
+                                    <input type="text" class="form-control" id="pesanNama" name="pesanNama"
+                                        placeholder="...">
                                 </div>
                                 <div class="col-lg-6">
-                                    <label for="pesan-email" class="form-label">Email:</label>
-                                    <input type="email" class="form-control" id="pesan-email" placeholder="...">
+                                    <label for="pesanEmail" class="form-label">Email:</label>
+                                    <input type="email" class="form-control" id="pesanEmail" name="pesanEmail"
+                                        placeholder="...">
                                 </div>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="pesan-subjek" class="form-label">Subjek:</label>
-                            <input type="text" class="form-control" id="pesan-subjek" placeholder="...">
+                            <label for="pesanSubjek" class="form-label">Subjek:</label>
+                            <input type="text" class="form-control" id="pesanSubjek" name="pesanSubjek"
+                                placeholder="...">
                         </div>
                         <div class="mb-3">
-                            <label for="pesan-pesan" class="form-label">Pesan:</label>
-                            <textarea id="pesan-pesan" class="form-control" rows="5"></textarea>
+                            <label for="pesanPesan" class="form-label">Pesan:</label>
+                            <textarea id="pesanPesan" class="form-control" name="pesanPesan" rows="5"></textarea>
                         </div>
                         <div>
                             <button type="submit" class="btn btn-sm btn-light"><i class="fa-solid fa-paper-plane"></i>

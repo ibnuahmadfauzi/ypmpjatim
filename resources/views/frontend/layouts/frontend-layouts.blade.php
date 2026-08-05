@@ -59,6 +59,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {{-- end jQuery CDN --}}
 
+    {{-- Sweetalert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- end Sweetalert --}}
+
     <script src="/assets/js/frontend.js"></script>
 
     @yield('extra-javascript')

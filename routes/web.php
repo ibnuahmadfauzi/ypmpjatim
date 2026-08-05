@@ -11,11 +11,13 @@ use App\Http\Controllers\Admin\PengaturanController;
 use App\Http\Controllers\Admin\PesanController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\PesanController as FrontendPesanController;
 use App\Http\Controllers\MemberController;
 use Illuminate\Support\Facades\Route;
 
 // route without auth
 Route::get('/', [HomeController::class, 'index'])->name('frontend-home-index');
+Route::post('/pesan', [FrontendPesanController::class, 'store'])->name('pesan.store');
 
 // route for login page access
 Route::middleware('guest')->group(function () {
