@@ -32,7 +32,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/bidang-kerja', [BidangKerjaController::class, 'index'])->name('admin.bidang-kerja.index');
     Route::get('/admin/buku', [BukuController::class, 'index'])->name('admin.buku.index');
     Route::get('/admin/pengajuan-penerbitan', [PenerbitanBukuController::class, 'index'])->name('admin.penerbitan-buku.index');
+
+    // CRUD Artikel
     Route::get('/admin/artikel', [ArtikelController::class, 'index'])->name('admin.artikel.index');
+    Route::post('/admin/artikel/store', [ArtikelController::class, 'store'])->name('admin.artikel.store');
+    Route::get('/admin/artikel/editor', [ArtikelController::class, 'editor'])->name('admin.artikel-editor.index');
+    // end CRUD Artikel
+
     Route::get('/admin/berita', [BeritaController::class, 'index'])->name('admin.berita.index');
     Route::get('/admin/member', [AdminMemberController::class, 'index'])->name('admin.member.index');
     Route::get('/admin/pesan', [PesanController::class, 'index'])->name('admin.pesan.index');

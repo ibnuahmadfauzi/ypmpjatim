@@ -80,6 +80,10 @@
     <script src="https://cdn.datatables.net/2.3.2/js/dataTables.bootstrap5.js"></script>
     {{-- end CDN Datatable --}}
 
+    {{-- Sweetalert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- end Sweetalert --}}
+
     <script src="/assets/js/admin.js"></script>
 
     @yield('extra-javascript')
