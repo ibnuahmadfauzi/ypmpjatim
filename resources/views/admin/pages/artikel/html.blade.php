@@ -23,10 +23,12 @@
                                 <tr>
                                     <td>{{ $item->judul }}</td>
                                     <td>
-                                        <button class="btn btn-warning text-light btn-sm">
+                                        <button
+                                            onclick="window.location.href = '/admin/artikel/{{ $item->id }}/editor'"
+                                            class="btn btn-warning text-light btn-sm">
                                             <i class="fa-solid fa-pencil"></i>
                                         </button>
-                                        <button class="btn btn-danger btn-sm">
+                                        <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $item->id }}">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
                                     </td>

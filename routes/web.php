@@ -40,6 +40,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/artikel', [ArtikelController::class, 'index'])->name('admin.artikel.index');
     Route::post('/admin/artikel/store', [ArtikelController::class, 'store'])->name('admin.artikel.store');
     Route::get('/admin/artikel/editor', [ArtikelController::class, 'editor'])->name('admin.artikel-editor.index');
+    Route::get('/admin/artikel/{id}/editor', [ArtikelController::class, 'editor'])->name('admin.artikel-editor.editor');
+    Route::delete('/admin/artikel/{id}/delete', [ArtikelController::class, 'destroy'])->name('admin.artikel.destroy');
+    Route::put('/admin/artikel/{id}/update', [ArtikelController::class, 'update'])->name('admin.artikel.update');
     // end CRUD Artikel
 
     Route::get('/admin/berita', [BeritaController::class, 'index'])->name('admin.berita.index');

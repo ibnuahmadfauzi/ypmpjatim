@@ -33,3 +33,61 @@
         });
     })
 </script>
+
+<script>
+    $(document).on('click', '.btn-hapus', function() {
+
+        let id = $(this).data('id');
+
+        Swal.fire({
+            title: 'Hapus artikel?',
+            text: 'Data artikel yang dihapus tidak dapat dikembalikan.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Ya, Hapus',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+
+                $.ajax({
+                    url: '/admin/artikel/' + id + '/delete',
+                    type: 'DELETE',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+
+                    success: function(response) {
+
+                        Swal.fire({
+                            title: 'Berhasil!',
+                            text: response.message,
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then(() => {
+
+                            location.reload();
+
+                        });
+
+                    },
+
+                    error: function(xhr) {
+
+                        console.log(xhr);
+
+                        Swal.fire({
+                            title: 'Gagal!',
+                            text: 'Artikel gagal dihapus.',
+                            icon: 'error'
+                        });
+
+                    }
+                });
+
+            }
+
+        });
+
+    });
+</script>
