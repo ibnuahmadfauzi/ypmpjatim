@@ -48,9 +48,18 @@ class ArtikelController extends Controller
             $nama_thumbnail
         );
 
+        function buatSlug($teks)
+        {
+            $slug = strtolower($teks);
+            $slug = preg_replace('/[^a-z0-9]+/', '-', $slug);
+            $slug = trim($slug, '-');
+            return $slug;
+        }
+
         // Simpan artikel
         Artikel::create([
             'judul' => $request->input('judul-artikel'),
+            'slug' => buatSlug($request->input('judul-artikel')),
             'konten' => $request->input('konten-artikel'),
             'thumbnail' => $nama_thumbnail,
             'kategori' => $request->input('kategori-artikel'),
