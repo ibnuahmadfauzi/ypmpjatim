@@ -12,8 +12,9 @@ class ArtikelController extends Controller
     public function index()
     {
         $user = Auth::user();
-
+        $data_artikel = Artikel::select('id', 'judul')->get();
         return view('admin.pages.artikel.index', [
+            'data_artikel' => $data_artikel,
             'user' => $user,
         ]);
     }
