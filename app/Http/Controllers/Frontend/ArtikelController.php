@@ -24,6 +24,18 @@ class ArtikelController extends Controller
         return view('frontend.pages.artikel.index', [
             'data_pengaturan' => $data_pengaturan,
             'data_artikel' => $data_artikel,
+            'judul_daftar' => 'Semua Artikel',
+        ]);
+    }
+
+    public function show($slug)
+    {
+        $artikel = Artikel::where('slug', $slug)->first();
+        $data_pengaturan = Pengaturan::first();
+
+        return view('frontend.pages.artikel-detail.index', [
+            'data_pengaturan' => $data_pengaturan,
+            'data_artikel' => $artikel,
         ]);
     }
 }

@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('frontend-home-index');
 Route::post('/pesan', [FrontendPesanController::class, 'store'])->name('pesan.store');
 Route::get('/artikel', [FrontendArtikelController::class, 'index'])->name('frontend-artikel-index');
+Route::get('/artikel/{slug}', [FrontendArtikelController::class, 'show'])->name('frontend-artikel-show');
 
 // route for login page access
 Route::middleware('guest')->group(function () {

@@ -14,6 +14,7 @@ function excerpt($text, $limit = 150)
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
+                <h3 class="text-center mb-5">Menampilkan : {{ $judul_daftar }}</h3>
                 <div class="row">
                     @forelse ($data_artikel as $item)
                         <div class="col-lg-6">
