@@ -47,6 +47,14 @@
     cursor: not-allowed;
     opacity: 0.7;
 }
+
+.text-light {
+    color: #ffffff !important;
+}
+
+.bg-primary {
+    background-color: #8d826c !important;
+}
 /* end Bootstrap Reset */
 /* ========================================================= */
 
@@ -64,6 +72,7 @@
 /* ========================================================= */
 body {
     color: #373737;
+    background-color: #f8fafa;
 }
 /* end Style for Body element */
 /* ========================================================= */
@@ -87,6 +96,7 @@ body {
 }
 .homepage-banner {
     padding: 30px 0;
+    background-color: #ffffff;
 }
 .homepage-banner img {
     width: 100%;
@@ -110,6 +120,7 @@ body {
     line-height: 30px;
 }
 .homepage-bidangkerja {
+    background-color: #ffffff;
     padding: 50px 0;
 }
 .homepage-bidangkerja h2 {
@@ -173,6 +184,7 @@ body {
 /* ========================================================= */
 .partner-section {
     padding: 50px 0;
+    background-color: #ffffff;
 }
 .partner-section h2 {
     text-align: center;

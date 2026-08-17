@@ -2,7 +2,7 @@
     <div class="container">
 
         <!-- Logo -->
-        <a class="navbar-brand fw-bold" href="{{ route('frontend-home-index') }}">
+        <a class="navbar-brand fw-bold" href="{{ route('frontend.home.index') }}">
             <img src={{ '/assets/images/' . $data_pengaturan->logo_navbar }}
                 alt="Yayasan Pengembangan Mutu Pendidikan - Jawa Timur">
         </a>
@@ -19,7 +19,7 @@
             <ul class="navbar-nav mx-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link home-link" href="{{ route('frontend-home-index') }}">Home</a>
+                    <a class="nav-link home-link" href="{{ route('frontend.home.index') }}">Home</a>
                 </li>
 
                 <li class="nav-item">
@@ -27,13 +27,15 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                    <a class="nav-link bidang-kerja-link dropdown-toggle" href="#" role="button"
+                        data-bs-toggle="dropdown">
                         Bidang Kerja
                     </a>
 
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item"
+                                href="{{ route('frontend.bidang-kerja.konsultasi-pendidikan.index') }}">
                                 Konsultasi Pendidikan
                             </a>
                         </li>
@@ -77,7 +79,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('frontend-artikel-index') }}">Artikel</a>
+                    <a class="nav-link" href="{{ route('frontend.artikel.index') }}">Artikel</a>
                 </li>
 
                 <li class="nav-item">
