@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\PesanController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Frontend\ArtikelController as FrontendArtikelController;
 use App\Http\Controllers\Frontend\BidangKerja\KonsultasiPendidikanController;
+use App\Http\Controllers\Frontend\BidangKerja\PenerbitanBukuController as BidangKerjaPenerbitanBukuController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PesanController as FrontendPesanController;
 use App\Http\Controllers\MemberController;
@@ -23,6 +24,7 @@ Route::post('/pesan', [FrontendPesanController::class, 'store'])->name('pesan.st
 Route::get('/artikel', [FrontendArtikelController::class, 'index'])->name('frontend.artikel.index');
 Route::get('/artikel/{slug}', [FrontendArtikelController::class, 'show'])->name('frontend.artikel.show');
 Route::get('/bidang-kerja/konsultasi-pendidikan', [KonsultasiPendidikanController::class, 'index'])->name('frontend.bidang-kerja.konsultasi-pendidikan.index');
+Route::get('/bidang-kerja/penerbitan-buku', [BidangKerjaPenerbitanBukuController::class, 'index'])->name('frontend.bidang-kerja.penerbitan-buku.index');
 
 
 // route for login page access
