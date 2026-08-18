@@ -54,25 +54,29 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item"
+                                href="{{ route('frontend.bidang-kerja.diklat-workshop-seminar.index') }}">
                                 Diklat, Workshop, dan Seminar
                             </a>
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item"
+                                href="{{ route('frontend.bidang-kerja.pengerjaan-pmm-guru.index') }}">
                                 Pengerjaan PMM Guru
                             </a>
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item"
+                                href="{{ route('frontend.bidang-kerja.pengerjaan-akreditasi-sekolah.index') }}">
                                 Pengerjaan Akreditasi Sekolah
                             </a>
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item"
+                                href="{{ route('frontend.bidang-kerja.pengerjaan-sertifikasi-guru.index') }}">
                                 Pengerjaan Sertifikasi Guru
                             </a>
                         </li>

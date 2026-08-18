@@ -11,9 +11,13 @@ use App\Http\Controllers\Admin\PengaturanController;
 use App\Http\Controllers\Admin\PesanController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Frontend\ArtikelController as FrontendArtikelController;
+use App\Http\Controllers\Frontend\BidangKerja\DiklatWorkshopSeminarController;
 use App\Http\Controllers\Frontend\BidangKerja\KonsultasiPendidikanController;
 use App\Http\Controllers\Frontend\BidangKerja\PenerbitanBukuController as BidangKerjaPenerbitanBukuController;
 use App\Http\Controllers\Frontend\BidangKerja\PenerbitanJurnalController;
+use App\Http\Controllers\Frontend\BidangKerja\PengerjaanAkreditasiSekolahController;
+use App\Http\Controllers\Frontend\BidangKerja\PengerjaanPMMGuruController;
+use App\Http\Controllers\Frontend\BidangKerja\PengerjaanSertifikasiGuruController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PesanController as FrontendPesanController;
 use App\Http\Controllers\MemberController;
@@ -27,6 +31,10 @@ Route::get('/artikel/{slug}', [FrontendArtikelController::class, 'show'])->name(
 Route::get('/bidang-kerja/konsultasi-pendidikan', [KonsultasiPendidikanController::class, 'index'])->name('frontend.bidang-kerja.konsultasi-pendidikan.index');
 Route::get('/bidang-kerja/penerbitan-buku', [BidangKerjaPenerbitanBukuController::class, 'index'])->name('frontend.bidang-kerja.penerbitan-buku.index');
 Route::get('/bidang-kerja/penerbitan-jurnal', [PenerbitanJurnalController::class, 'index'])->name('frontend.bidang-kerja.penerbitan-jurnal.index');
+Route::get('/bidang-kerja/diklat-workshop-seminar', [DiklatWorkshopSeminarController::class, 'index'])->name('frontend.bidang-kerja.diklat-workshop-seminar.index');
+Route::get('/bidang-kerja/pengerjaan-pmm-guru', [PengerjaanPMMGuruController::class, 'index'])->name('frontend.bidang-kerja.pengerjaan-pmm-guru.index');
+Route::get('/bidang-kerja/pengerjaan-sertifikasi-guru', [PengerjaanSertifikasiGuruController::class, 'index'])->name('frontend.bidang-kerja.pengerjaan-sertifikasi-guru.index');
+Route::get('/bidang-kerja/pengerjaan-akreditasi-sekolah', [PengerjaanAkreditasiSekolahController::class, 'index'])->name('frontend.bidang-kerja.pengerjaan-akreditasi-sekolah.index');
 
 
 // route for login page access
