@@ -47,7 +47,8 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item"
+                                href="{{ route('frontend.bidang-kerja.penerbitan-jurnal.index') }}">
                                 Penerbitan Jurnal
                             </a>
                         </li>
