@@ -20,6 +20,7 @@ use App\Http\Controllers\Frontend\BidangKerja\PengerjaanPMMGuruController;
 use App\Http\Controllers\Frontend\BidangKerja\PengerjaanSertifikasiGuruController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PesanController as FrontendPesanController;
+use App\Http\Controllers\Frontend\TentangKamiController;
 use App\Http\Controllers\MemberController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,7 @@ Route::get('/bidang-kerja/diklat-workshop-seminar', [DiklatWorkshopSeminarContro
 Route::get('/bidang-kerja/pengerjaan-pmm-guru', [PengerjaanPMMGuruController::class, 'index'])->name('frontend.bidang-kerja.pengerjaan-pmm-guru.index');
 Route::get('/bidang-kerja/pengerjaan-sertifikasi-guru', [PengerjaanSertifikasiGuruController::class, 'index'])->name('frontend.bidang-kerja.pengerjaan-sertifikasi-guru.index');
 Route::get('/bidang-kerja/pengerjaan-akreditasi-sekolah', [PengerjaanAkreditasiSekolahController::class, 'index'])->name('frontend.bidang-kerja.pengerjaan-akreditasi-sekolah.index');
+Route::get('/tentang-kami', [TentangKamiController::class, 'index'])->name('frontend.tentang-kami.index');
 
 
 // route for login page access

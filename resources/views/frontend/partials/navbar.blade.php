@@ -23,7 +23,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tentang Kami</a>
+                    <a class="nav-link" href="{{ route('frontend.tentang-kami.index') }}">Tentang Kami</a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -91,9 +91,9 @@
                     <a class="nav-link" href="#">Berita</a>
                 </li>
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="#">Kontak</a>
-                </li>
+                </li> --}}
 
             </ul>
 
