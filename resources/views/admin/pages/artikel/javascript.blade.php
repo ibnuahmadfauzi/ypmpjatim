@@ -1,12 +1,16 @@
 <script>
     $(document).ready(function() {
+
         $('.admin-artikel-menu').addClass('active');
+
         $("#tableArtikel").DataTable({
             responsive: true,
 
             autoWidth: false,
 
             pageLength: 10,
+
+            ordering: false,
 
             language: {
                 search: "Cari :",
@@ -25,13 +29,9 @@
                     next: "Berikutnya",
                 },
             },
-
-            columnDefs: [{
-                orderable: false,
-                targets: 1,
-            }, ],
         });
-    })
+
+    });
 </script>
 
 <script>

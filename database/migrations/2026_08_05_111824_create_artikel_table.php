@@ -20,6 +20,7 @@ class CreateArtikelTable extends Migration
             $table->string('kategori');
             $table->string('thumbnail');
             $table->text('konten');
+            $table->integer('dilihat');
             $table->integer('user_id');
             $table->timestamps();
         });

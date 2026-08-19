@@ -83,10 +83,42 @@
             <div class="col-lg-6">
                 <h5>Artikel Terbaru</h5>
                 <div class="box-artikel-berita">
-                    <div class="d-flex justify-content-center py-4">
-                        <img src="https://i.pinimg.com/originals/cf/6f/cf/cf6fcf14be2cd01dd4923b36445ca632.gif"
-                            class="w-50" alt="">
+                    <!-- Artikel Terpopuler -->
+                    <div class="artikel-populer">
+
+                        @forelse ($artikel_terbaru as $artikel)
+                            <a href="{{ url('/artikel/' . $artikel->slug) }}" class="artikel-populer-item">
+
+                                <!-- Thumbnail -->
+                                <img src="{{ asset('assets/images/artikel/' . $artikel->thumbnail) }}"
+                                    alt="{{ $artikel->judul }}">
+
+                                <!-- Informasi Artikel -->
+                                <div class="artikel-populer-info">
+
+                                    <h6>
+                                        {{ $artikel->judul }}
+                                    </h6>
+
+                                    <small>
+                                        <i class="fa-regular fa-eye me-1"></i>
+                                        {{ number_format($artikel->dilihat, 0, ',', '.') }} kali
+                                        dilihat
+                                    </small>
+
+                                </div>
+
+                            </a>
+
+                        @empty
+
+                            <p class="text-muted text-center mb-0">
+                                Belum ada artikel populer.
+                            </p>
+                        @endforelse
+
                     </div>
+
                 </div>
             </div>
             <div class="col-lg-6">

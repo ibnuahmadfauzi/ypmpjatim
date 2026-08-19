@@ -23,25 +23,194 @@ function tanggalIndonesia($tanggal)
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <p>
-                    {!! tampilkanKategori($data_artikel->kategori) !!}
-                </p>
-                <p>
-                    <a href="/">Home</a> > <a href="/artikel">Artikel</a>
-                </p>
-                <h2 class="fw-semibold">{{ $data_artikel->judul }}</h2>
-                <p>
-                    <small>{{ tanggalIndonesia($data_artikel->updated_at) }}</small>
-                </p>
-                <div class="my-4">
-                    <img src={{ '/uploads/artikel/' . $data_artikel->thumbnail }}
-                        alt="Yayasan Pengembangan Mutu Pendidikan - Jawa Timur">
-                </div>
-                <div>
-                    {!! $data_artikel->konten !!}
+                <div class="card border-0">
+                    <div class="card-body">
+                        <p>
+                            {!! tampilkanKategori($data_artikel->kategori) !!}
+                        </p>
+                        <p>
+                            <a href="/">Home</a> > <a href="/artikel">Artikel</a>
+                        </p>
+                        <h2 class="fw-semibold">{{ $data_artikel->judul }}</h2>
+                        <p>
+                            <small>{{ tanggalIndonesia($data_artikel->updated_at) }}</small>
+                        </p>
+                        <div class="my-4">
+                            <img src={{ '/assets/images/artikel/' . $data_artikel->thumbnail }}
+                                alt="Yayasan Pengembangan Mutu Pendidikan - Jawa Timur" class="w-100">
+                        </div>
+                        <div>
+                            {!! $data_artikel->konten !!}
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="card border-0">
+                    <div class="card-body">
+                        <!-- Sidebar -->
+                        <aside class="sidebar-artikel">
+
+                            <!-- Pencarian Artikel -->
+                            <div class="card border-0 shadow-sm mb-4">
+                                <div class="card-body p-4">
+
+                                    <h5 class="fw-semibold mb-3">
+                                        <i class="fa-solid fa-magnifying-glass me-2"></i>
+                                        Cari Artikel
+                                    </h5>
+
+                                    <form action="#" method="GET">
+                                        <div class="input-group">
+                                            <input type="text" name="search" class="form-control"
+                                                placeholder="Cari artikel...">
+
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+
+
+                            <!-- Artikel Terpopuler -->
+                            <!-- Artikel Terpopuler -->
+                            <div class="card border-0 shadow-sm mb-4">
+                                <div class="card-body p-4">
+
+                                    <h5 class="fw-semibold mb-3">
+                                        <i class="fa-solid fa-fire me-2"></i>
+                                        Artikel Terpopuler
+                                    </h5>
+
+                                    <div class="artikel-populer">
+
+                                        @forelse ($artikel_populer as $artikel)
+                                            <a href="{{ url('/artikel/' . $artikel->slug) }}"
+                                                class="artikel-populer-item">
+
+                                                <!-- Thumbnail -->
+                                                <img src="{{ asset('assets/images/artikel/' . $artikel->thumbnail) }}"
+                                                    alt="{{ $artikel->judul }}">
+
+                                                <!-- Informasi Artikel -->
+                                                <div class="artikel-populer-info">
+
+                                                    <h6>
+                                                        {{ $artikel->judul }}
+                                                    </h6>
+
+                                                    <small>
+                                                        <i class="fa-regular fa-eye me-1"></i>
+                                                        {{ number_format($artikel->dilihat, 0, ',', '.') }} kali
+                                                        dilihat
+                                                    </small>
+
+                                                </div>
+
+                                            </a>
+
+                                        @empty
+
+                                            <p class="text-muted text-center mb-0">
+                                                Belum ada artikel populer.
+                                            </p>
+                                        @endforelse
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Berita Terpopuler -->
+                            <div class="card border-0 shadow-sm mb-4">
+                                <div class="card-body p-4">
+
+                                    <h5 class="fw-semibold mb-3">
+                                        <i class="fa-solid fa-fire me-2"></i>
+                                        Berita Terpopuler
+                                    </h5>
+
+                                    <div class="artikel-populer">
+
+                                        <!-- Artikel 1 -->
+                                        <a href="#" class="artikel-populer-item">
+                                            <img src="{{ asset('assets/images/artikel-1.jpg') }}" alt="Artikel 1">
+
+                                            <div>
+                                                <h6>
+                                                    Judul artikel populer pertama
+                                                </h6>
+
+                                                <small>
+                                                    <i class="fa-regular fa-eye me-1"></i>
+                                                    1.245 kali dilihat
+                                                </small>
+                                            </div>
+                                        </a>
+
+                                        <!-- Artikel 2 -->
+                                        <a href="#" class="artikel-populer-item">
+                                            <img src="{{ asset('assets/images/artikel-2.jpg') }}" alt="Artikel 2">
+
+                                            <div>
+                                                <h6>
+                                                    Judul artikel populer kedua
+                                                </h6>
+
+                                                <small>
+                                                    <i class="fa-regular fa-eye me-1"></i>
+                                                    982 kali dilihat
+                                                </small>
+                                            </div>
+                                        </a>
+
+                                        <!-- Artikel 3 -->
+                                        <a href="#" class="artikel-populer-item">
+                                            <img src="{{ asset('assets/images/artikel-3.jpg') }}" alt="Artikel 3">
+
+                                            <div>
+                                                <h6>
+                                                    Judul artikel populer ketiga
+                                                </h6>
+
+                                                <small>
+                                                    <i class="fa-regular fa-eye me-1"></i>
+                                                    756 kali dilihat
+                                                </small>
+                                            </div>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <!-- Papan Iklan -->
+                            {{-- <div class="card border-0 shadow-sm">
+                                <div class="card-body p-4">
+
+                                    <h5 class="fw-semibold mb-3">
+                                        <i class="fa-solid fa-bullhorn me-2"></i>
+                                        Papan Iklan
+                                    </h5>
+
+                                    <div class="papan-iklan">
+
+                                        <img src="{{ asset('assets/images/iklan.jpg') }}" alt="Papan Iklan">
+
+                                    </div>
+
+                                </div>
+                            </div> --}}
+
+                        </aside>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

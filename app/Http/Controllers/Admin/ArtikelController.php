@@ -12,7 +12,11 @@ class ArtikelController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $data_artikel = Artikel::select('id', 'judul')->get();
+
+        $data_artikel = Artikel::select('id', 'judul')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
         return view('admin.pages.artikel.index', [
             'data_artikel' => $data_artikel,
             'user' => $user,
@@ -23,12 +27,15 @@ class ArtikelController extends Controller
     {
         if ($id == null) {
             $user = Auth::user();
+
             return view('admin.pages.artikel-editor.index', [
                 'user' => $user,
             ]);
         } else {
             $user = Auth::user();
+
             $artikel = Artikel::where('id', $id)->first();
+
             return view('admin.pages.artikel-editor-update.index', [
                 'user' => $user,
                 'data_artikel' => $artikel,
@@ -53,7 +60,7 @@ class ArtikelController extends Controller
         $nama_thumbnail = time() . '.' . $thumbnail->getClientOriginalExtension();
 
         $thumbnail->move(
-            public_path('uploads/artikel'),
+            public_path('assets/images/artikel'),
             $nama_thumbnail
         );
 
@@ -62,6 +69,7 @@ class ArtikelController extends Controller
             $slug = strtolower($teks);
             $slug = preg_replace('/[^a-z0-9]+/', '-', $slug);
             $slug = trim($slug, '-');
+
             return $slug;
         }
 
@@ -73,6 +81,7 @@ class ArtikelController extends Controller
             'thumbnail' => $nama_thumbnail,
             'kategori' => $request->input('kategori-artikel'),
             'user_id' => $user->id,
+            'dilihat' => 1,
         ]);
 
         return response()->json([
@@ -96,24 +105,26 @@ class ArtikelController extends Controller
         $artikel->konten = $request->input('konten-artikel');
         $artikel->kategori = $request->input('kategori-artikel');
 
+        // Jika upload thumbnail baru
         if ($request->hasFile('thumbnail-artikel')) {
 
             $thumbnail = $request->file('thumbnail-artikel');
 
             $nama_thumbnail = time() . '.' . $thumbnail->getClientOriginalExtension();
 
-            // Hapus thumbnail lama
+            // Path thumbnail lama
             $path_lama = public_path(
-                'uploads/artikel/' . $artikel->thumbnail
+                'assets/images/artikel/' . $artikel->thumbnail
             );
 
-            if (file_exists($path_lama)) {
+            // Hapus thumbnail lama
+            if ($artikel->thumbnail && file_exists($path_lama)) {
                 unlink($path_lama);
             }
 
             // Upload thumbnail baru
             $thumbnail->move(
-                public_path('uploads/artikel'),
+                public_path('assets/images/artikel'),
                 $nama_thumbnail
             );
 
@@ -133,6 +144,17 @@ class ArtikelController extends Controller
     {
         $artikel = Artikel::findOrFail($id);
 
+        // Path thumbnail
+        $path_thumbnail = public_path(
+            'assets/images/artikel/' . $artikel->thumbnail
+        );
+
+        // Hapus thumbnail
+        if ($artikel->thumbnail && file_exists($path_thumbnail)) {
+            unlink($path_thumbnail);
+        }
+
+        // Hapus data artikel
         $artikel->delete();
 
         return response()->json([

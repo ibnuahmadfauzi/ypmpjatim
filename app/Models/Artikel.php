@@ -17,5 +17,6 @@ class Artikel extends Model
         'thumbnail',
         'kategori',
         'user_id',
+        'dilihat',
     ];
 }
