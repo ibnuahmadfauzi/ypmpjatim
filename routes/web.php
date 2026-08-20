@@ -62,7 +62,15 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('/admin/artikel/{id}/update', [ArtikelController::class, 'update'])->name('admin.artikel.update');
     // end CRUD Artikel
 
+    // CRUD Berita
     Route::get('/admin/berita', [BeritaController::class, 'index'])->name('admin.berita.index');
+    Route::post('/admin/berita/store', [BeritaController::class, 'store'])->name('admin.berita.store');
+    Route::get('/admin/berita/editor', [BeritaController::class, 'editor'])->name('admin.berita-editor.index');
+    Route::get('/admin/berita/{id}/editor', [BeritaController::class, 'editor'])->name('admin.berita-editor.editor');
+    Route::delete('/admin/berita/{id}/delete', [BeritaController::class, 'destroy'])->name('admin.berita.destroy');
+    Route::put('/admin/berita/{id}/update', [BeritaController::class, 'update'])->name('admin.berita.update');
+    // end CRUD Berita
+
     Route::get('/admin/member', [AdminMemberController::class, 'index'])->name('admin.member.index');
     Route::get('/admin/pesan', [PesanController::class, 'index'])->name('admin.pesan.index');
     Route::get('/admin/pengaturan', [PengaturanController::class, 'index'])->name('admin.pengaturan.index');
