@@ -88,7 +88,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Berita</a>
+                    <a class="nav-link" href="{{ route('frontend.berita.index') }}">Berita</a>
                 </li>
 
                 {{-- <li class="nav-item">

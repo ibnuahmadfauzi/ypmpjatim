@@ -1,12 +1,12 @@
 <?php
-function excerpt($text, $limit = 150)
+function tanggalIndonesia($tanggal)
 {
-    $text = strip_tags($text);
-    $text = trim(preg_replace('/\s+/', ' ', $text));
-    if (strlen($text) <= $limit) {
-        return $text;
-    }
-    return substr($text, 0, $limit) . '...';
+    $bulan = [1 => 'Januari', 2 => 'Februari', 3 => 'Maret', 4 => 'April', 5 => 'Mei', 6 => 'Juni', 7 => 'Juli', 8 => 'Agustus', 9 => 'September', 10 => 'Oktober', 11 => 'November', 12 => 'Desember'];
+    $tanggal = strtotime($tanggal);
+    $hari = date('d', $tanggal);
+    $bulanAngka = date('n', $tanggal);
+    $tahun = date('Y', $tanggal);
+    return $hari . ' ' . $bulan[$bulanAngka] . ' ' . $tahun;
 }
 ?>
 
@@ -16,35 +16,20 @@ function excerpt($text, $limit = 150)
             <div class="col-lg-8">
                 <div class="card border-0">
                     <div class="card-body">
-                        <h3 class="text-center mb-5">Menampilkan : {{ $judul_daftar }}</h3>
-                        <div class="row">
-                            @forelse ($data_berita as $item)
-                                <div class="col-lg-6">
-                                    <div class="card mb-3">
-                                        <div class="card-body p-0">
-                                            <div class="box-thumbnail-artikel">
-                                                <img src="/assets/images/berita/{{ $item->thumbnail }}" class="w-100"
-                                                    alt="Yayasan Pengembangan Mutu Pendidikan - Jawa Timur">
-                                            </div>
-                                            <div class="p-3">
-                                                <h5>{{ $item->judul }}</h5>
-                                                <p>
-                                                    <small>
-                                                        {{ excerpt($item->konten) }}
-                                                    </small>
-                                                </p>
-                                                <p>
-                                                    <a class="btn btn-primary btn-sm"
-                                                        href={{ '/berita/' . $item->slug }}>baca selengkapnya</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @empty
-                            @endforelse
+                        <p>
+                            <a href="/">Home</a> > <a href="/berita">Berita</a>
+                        </p>
+                        <h2 class="fw-semibold">{{ $data_berita->judul }}</h2>
+                        <p>
+                            <small>{{ tanggalIndonesia($data_berita->updated_at) }}</small>
+                        </p>
+                        <div class="my-4">
+                            <img src={{ '/assets/images/berita/' . $data_berita->thumbnail }}
+                                alt="Yayasan Pengembangan Mutu Pendidikan - Jawa Timur" class="w-100">
                         </div>
-                        {{ $data_berita->links() }}
+                        <div>
+                            {!! $data_berita->konten !!}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -66,7 +51,7 @@ function excerpt($text, $limit = 150)
                                     <form action="#" method="GET">
                                         <div class="input-group">
                                             <input type="text" name="search" class="form-control"
-                                                placeholder="Cari artikel...">
+                                                placeholder="Cari berita...">
 
                                             <button class="btn btn-primary" type="submit">
                                                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -94,7 +79,7 @@ function excerpt($text, $limit = 150)
                                                 class="artikel-populer-item">
 
                                                 <!-- Thumbnail -->
-                                                <img src="{{ asset('assets/images/berita/' . $berita->thumbnail) }}"
+                                                <img src="{{ asset('/assets/images/berita/' . $berita->thumbnail) }}"
                                                     alt="{{ $berita->judul }}">
 
                                                 <!-- Informasi Artikel -->
