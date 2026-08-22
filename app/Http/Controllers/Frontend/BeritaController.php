@@ -10,18 +10,39 @@ use Illuminate\Http\Request;
 
 class BeritaController extends Controller
 {
-    public function index()
+    public function index($keyword = null)
     {
-        $data_berita = Berita::select(
-            'id',
-            'judul',
-            'slug',
-            'thumbnail',
-            'konten',
-        )
-            ->orderBy('id', 'desc')
-            ->paginate(6);
+        if ($keyword == null) {
 
+            $data_berita = Berita::select(
+                'id',
+                'judul',
+                'slug',
+                'thumbnail',
+                'konten',
+            )
+                ->orderBy('created_at', 'desc')
+                ->paginate(6);
+
+            $judul_daftar = 'Semua Berita';
+        } else {
+
+            $data_berita = Berita::select(
+                'id',
+                'judul',
+                'slug',
+                'thumbnail',
+                'konten',
+            )
+                ->where('judul', 'like', '%' . $keyword . '%')
+                ->orWhere('konten', 'like', '%' . $keyword . '%')
+                ->orderBy('created_at', 'desc')
+                ->paginate(6);
+
+            $judul_daftar = $keyword;
+        }
+
+        // Berita populer
         $berita_populer = Berita::select(
             'thumbnail',
             'judul',
@@ -32,6 +53,7 @@ class BeritaController extends Controller
             ->limit(5)
             ->get();
 
+        // Artikel populer
         $artikel_populer = Artikel::select(
             'thumbnail',
             'judul',
@@ -42,12 +64,13 @@ class BeritaController extends Controller
             ->limit(5)
             ->get();
 
+        // Pengaturan
         $data_pengaturan = Pengaturan::first();
 
         return view('frontend.pages.berita.index', [
             'data_pengaturan' => $data_pengaturan,
             'data_berita' => $data_berita,
-            'judul_daftar' => 'Semua Berita',
+            'judul_daftar' => $judul_daftar,
             'berita_populer' => $berita_populer,
             'artikel_populer' => $artikel_populer,
         ]);

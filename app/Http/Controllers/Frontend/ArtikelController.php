@@ -10,18 +10,39 @@ use Illuminate\Http\Request;
 
 class ArtikelController extends Controller
 {
-    public function index()
+    public function index($keyword = null)
     {
-        $data_artikel = Artikel::select(
-            'id',
-            'judul',
-            'slug',
-            'thumbnail',
-            'kategori',
-            'konten',
-        )
-            ->orderBy('id', 'desc')
-            ->paginate(6);
+        if ($keyword == null) {
+
+            $data_artikel = Artikel::select(
+                'id',
+                'judul',
+                'slug',
+                'thumbnail',
+                'kategori',
+                'konten',
+            )
+                ->orderBy('created_at', 'desc')
+                ->paginate(6);
+
+            $judul_daftar = 'Semua Artikel';
+        } else {
+            $data_artikel = Artikel::select(
+                'id',
+                'judul',
+                'slug',
+                'thumbnail',
+                'kategori',
+                'konten',
+            )
+                ->where('judul', 'like', '%' . $keyword . '%')
+                ->orWhere('kategori', 'like', '%' . $keyword . '%')
+                ->orWhere('konten', 'like', '%' . $keyword . '%')
+                ->orderBy('created_at', 'desc')
+                ->paginate(6);
+
+            $judul_daftar = $keyword;
+        }
 
         $artikel_populer = Artikel::select(
             'thumbnail',
@@ -48,7 +69,7 @@ class ArtikelController extends Controller
         return view('frontend.pages.artikel.index', [
             'data_pengaturan' => $data_pengaturan,
             'data_artikel' => $data_artikel,
-            'judul_daftar' => 'Semua Artikel',
+            'judul_daftar' => $judul_daftar,
             'artikel_populer' => $artikel_populer,
             'berita_populer' => $berita_populer,
         ]);
@@ -56,6 +77,7 @@ class ArtikelController extends Controller
 
     public function show($slug)
     {
+
         $artikel = Artikel::where('slug', $slug)->first();
 
         // Tambah jumlah dilihat sebanyak 1

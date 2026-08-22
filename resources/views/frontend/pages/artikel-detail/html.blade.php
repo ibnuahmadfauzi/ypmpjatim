@@ -60,12 +60,12 @@ function tanggalIndonesia($tanggal)
                                         Cari Artikel
                                     </h5>
 
-                                    <form action="#" method="GET">
+                                    <form class="form-cari">
                                         <div class="input-group">
                                             <input type="text" name="search" class="form-control"
-                                                placeholder="Cari artikel...">
+                                                placeholder="Cari artikel..." id="keyword-cari-artikel">
 
-                                            <button class="btn btn-primary" type="submit">
+                                            <button class="btn btn-primary btn-cari-artikel">
                                                 <i class="fa-solid fa-magnifying-glass"></i>
                                             </button>
                                         </div>

@@ -39,7 +39,7 @@ function tanggalIndonesia($tanggal)
                         <!-- Sidebar -->
                         <aside class="sidebar-artikel">
 
-                            <!-- Pencarian Artikel -->
+                            <!-- Pencarian Berita -->
                             <div class="card border-0 shadow-sm mb-4">
                                 <div class="card-body p-4">
 
@@ -48,12 +48,12 @@ function tanggalIndonesia($tanggal)
                                         Cari Berita
                                     </h5>
 
-                                    <form action="#" method="GET">
+                                    <form class="form-cari">
                                         <div class="input-group">
                                             <input type="text" name="search" class="form-control"
-                                                placeholder="Cari berita...">
+                                                placeholder="Cari berita..." id="keyword-cari-berita">
 
-                                            <button class="btn btn-primary" type="submit">
+                                            <button class="btn btn-primary btn-cari-berita">
                                                 <i class="fa-solid fa-magnifying-glass"></i>
                                             </button>
                                         </div>
