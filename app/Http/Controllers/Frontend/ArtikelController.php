@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Artikel;
+use App\Models\Berita;
 use App\Models\Pengaturan;
 use Illuminate\Http\Request;
 
@@ -32,6 +33,16 @@ class ArtikelController extends Controller
             ->limit(5)
             ->get();
 
+        $berita_populer = Berita::select(
+            'thumbnail',
+            'judul',
+            'slug',
+            'dilihat',
+        )
+            ->orderBy('dilihat', 'desc')
+            ->limit(5)
+            ->get();
+
         $data_pengaturan = Pengaturan::first();
 
         return view('frontend.pages.artikel.index', [
@@ -39,6 +50,7 @@ class ArtikelController extends Controller
             'data_artikel' => $data_artikel,
             'judul_daftar' => 'Semua Artikel',
             'artikel_populer' => $artikel_populer,
+            'berita_populer' => $berita_populer,
         ]);
     }
 
@@ -59,6 +71,16 @@ class ArtikelController extends Controller
             ->limit(5)
             ->get();
 
+        $berita_populer = Berita::select(
+            'thumbnail',
+            'judul',
+            'slug',
+            'dilihat',
+        )
+            ->orderBy('dilihat', 'desc')
+            ->limit(5)
+            ->get();
+
         $data_pengaturan = Pengaturan::first();
 
         $data_pengaturan = Pengaturan::first();
@@ -67,6 +89,7 @@ class ArtikelController extends Controller
             'data_pengaturan' => $data_pengaturan,
             'data_artikel' => $artikel,
             'artikel_populer' => $artikel_populer,
+            'berita_populer' => $berita_populer,
         ]);
     }
 }

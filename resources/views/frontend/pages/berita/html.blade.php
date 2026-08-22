@@ -126,64 +126,48 @@ function excerpt($text, $limit = 150)
                                 </div>
                             </div>
 
-                            <!-- Berita Terpopuler -->
+                            <!-- Artikel Terpopuler -->
                             <div class="card border-0 shadow-sm mb-4">
                                 <div class="card-body p-4">
 
                                     <h5 class="fw-semibold mb-3">
                                         <i class="fa-solid fa-fire me-2"></i>
-                                        Berita Terpopuler
+                                        Artikel Terpopuler
                                     </h5>
 
                                     <div class="artikel-populer">
 
-                                        <!-- Artikel 1 -->
-                                        <a href="#" class="artikel-populer-item">
-                                            <img src="{{ asset('assets/images/artikel-1.jpg') }}" alt="Artikel 1">
+                                        @forelse ($artikel_populer as $artikel)
+                                            <a href="{{ url('/artikel/' . $artikel->slug) }}"
+                                                class="artikel-populer-item">
 
-                                            <div>
-                                                <h6>
-                                                    Judul artikel populer pertama
-                                                </h6>
+                                                <!-- Thumbnail -->
+                                                <img src="{{ asset('assets/images/artikel/' . $artikel->thumbnail) }}"
+                                                    alt="{{ $artikel->judul }}">
 
-                                                <small>
-                                                    <i class="fa-regular fa-eye me-1"></i>
-                                                    1.245 kali dilihat
-                                                </small>
-                                            </div>
-                                        </a>
+                                                <!-- Informasi Artikel -->
+                                                <div class="artikel-populer-info">
 
-                                        <!-- Artikel 2 -->
-                                        <a href="#" class="artikel-populer-item">
-                                            <img src="{{ asset('assets/images/artikel-2.jpg') }}" alt="Artikel 2">
+                                                    <h6>
+                                                        {{ $artikel->judul }}
+                                                    </h6>
 
-                                            <div>
-                                                <h6>
-                                                    Judul artikel populer kedua
-                                                </h6>
+                                                    <small>
+                                                        <i class="fa-regular fa-eye me-1"></i>
+                                                        {{ number_format($artikel->dilihat, 0, ',', '.') }} kali
+                                                        dilihat
+                                                    </small>
 
-                                                <small>
-                                                    <i class="fa-regular fa-eye me-1"></i>
-                                                    982 kali dilihat
-                                                </small>
-                                            </div>
-                                        </a>
+                                                </div>
 
-                                        <!-- Artikel 3 -->
-                                        <a href="#" class="artikel-populer-item">
-                                            <img src="{{ asset('assets/images/artikel-3.jpg') }}" alt="Artikel 3">
+                                            </a>
 
-                                            <div>
-                                                <h6>
-                                                    Judul artikel populer ketiga
-                                                </h6>
+                                        @empty
 
-                                                <small>
-                                                    <i class="fa-regular fa-eye me-1"></i>
-                                                    756 kali dilihat
-                                                </small>
-                                            </div>
-                                        </a>
+                                            <p class="text-muted text-center mb-0">
+                                                Belum ada artikel populer.
+                                            </p>
+                                        @endforelse
 
                                     </div>
 
