@@ -42,6 +42,11 @@ function excerpt($text, $limit = 150)
                                     </div>
                                 </div>
                             @empty
+                                <div class="py-5 my-5 text-center">
+                                    <p>
+                                        Belum ada artikel yang ditampilkan
+                                    </p>
+                                </div>
                             @endforelse
                         </div>
                         {{ $data_artikel->links() }}
