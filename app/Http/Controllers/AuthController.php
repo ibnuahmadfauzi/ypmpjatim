@@ -12,6 +12,11 @@ class AuthController extends Controller
         return view('login');
     }
 
+    public function daftarMember()
+    {
+        return view('daftar-member');
+    }
+
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([

@@ -47,6 +47,7 @@ Route::get('/tentang-kami', [TentangKamiController::class, 'index'])->name('fron
 // route for login page access
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::get('/daftar-member', [AuthController::class, 'daftarMember'])->name('daftar-member');
     Route::post('/login', [AuthController::class, 'authenticate']);
 });
 
